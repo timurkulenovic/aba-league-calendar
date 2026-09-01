@@ -1,0 +1,14 @@
+source_url = "https://www.aba-liga.com/calendar/26/1/"
+csv_path = "data/aba_liga_calendar.csv"
+timezone = "Europe/Ljubljana"
+default_duration_minutes = 120
+
+# macOS Calendar: the Personal calendar on the kulenovic.si Google account
+calendar_name = "Personal"
+calendar_description = "timur@kulenovic.si"
+
+# Substring match against home/away team names (case-insensitive)
+teams = [
+  "Cedevita Olimpija",
+  "Ilirija",
+]

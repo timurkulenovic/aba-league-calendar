@@ -1,0 +1,6 @@
+.venv/
+data/synced_uids.txt
+__pycache__/
+*.pyc
+.DS_Store
+.python-version
