@@ -1,0 +1,223 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//aba-league-calendar//ABA Liga//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:ABA Liga — Crvena zvezda Meridianbet
+X-WR-TIMEZONE:Europe/Ljubljana
+BEGIN:VEVENT
+UID:aba-liga-match-1@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20260927
+DTEND;VALUE=DATE:20260928
+SUMMARY:Borac Mozzart vs Crvena zvezda Meridianbet
+DESCRIPTION:ROUND 1 · Group A · https://www.aba-liga.com/match/1/26/1/Ove
+ rview/q1/1/home/borac-mozzart-crvena-zvezda-meridianbet/
+URL:https://www.aba-liga.com/match/1/26/1/Overview/q1/1/home/borac-mozzart-
+ crvena-zvezda-meridianbet/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-11@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;TZID=Europe/Ljubljana:20261004T170000
+DTEND;TZID=Europe/Ljubljana:20261004T190000
+SUMMARY:FMP vs Crvena zvezda Meridianbet
+DESCRIPTION:ROUND 2 · Group A · https://www.aba-liga.com/match/11/26/1/Ov
+ erview/q1/1/home/fmp-crvena-zvezda-meridianbet/
+URL:https://www.aba-liga.com/match/11/26/1/Overview/q1/1/home/fmp-crvena-zv
+ ezda-meridianbet/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-21@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261011
+DTEND;VALUE=DATE:20261012
+SUMMARY:Crvena zvezda Meridianbet vs Budućnost VOLI
+DESCRIPTION:ROUND 3 · Group A · https://www.aba-liga.com/match/21/26/1/Ov
+ erview/q1/1/home/crvena-zvezda-meridianbet-buducnost-voli/
+URL:https://www.aba-liga.com/match/21/26/1/Overview/q1/1/home/crvena-zvezda
+ -meridianbet-buducnost-voli/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-31@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;TZID=Europe/Ljubljana:20261019T160000
+DTEND;TZID=Europe/Ljubljana:20261019T180000
+SUMMARY:Krka vs Crvena zvezda Meridianbet
+DESCRIPTION:ROUND 4 · Group A · https://www.aba-liga.com/match/31/26/1/Ov
+ erview/q1/1/home/krka-crvena-zvezda-meridianbet/
+URL:https://www.aba-liga.com/match/31/26/1/Overview/q1/1/home/krka-crvena-z
+ vezda-meridianbet/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-41@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:Igokea m:tel vs Crvena zvezda Meridianbet
+DESCRIPTION:ROUND 5 · Group A · https://www.aba-liga.com/match/41/26/1/Ov
+ erview/q1/1/home/igokea-m-tel-crvena-zvezda-meridianbet/
+URL:https://www.aba-liga.com/match/41/26/1/Overview/q1/1/home/igokea-m-tel-
+ crvena-zvezda-meridianbet/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-51@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:Crvena zvezda Meridianbet vs HKK Široki TT Kabeli
+DESCRIPTION:ROUND 6 · Group A · https://www.aba-liga.com/match/51/26/1/Ov
+ erview/q1/1/home/crvena-zvezda-meridianbet-hkk-siroki-tt-kabeli/
+URL:https://www.aba-liga.com/match/51/26/1/Overview/q1/1/home/crvena-zvezda
+ -meridianbet-hkk-siroki-tt-kabeli/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-61@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261108
+DTEND;VALUE=DATE:20261109
+SUMMARY:Crvena zvezda Meridianbet vs Slovan Bratislava
+DESCRIPTION:ROUND 7 · Group A · https://www.aba-liga.com/match/61/26/1/Ov
+ erview/q1/1/home/crvena-zvezda-meridianbet-slovan-bratislava/
+URL:https://www.aba-liga.com/match/61/26/1/Overview/q1/1/home/crvena-zvezda
+ -meridianbet-slovan-bratislava/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-71@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:Crvena zvezda Meridianbet vs Cedevita Olimpija
+DESCRIPTION:ROUND 8 · Group A · https://www.aba-liga.com/match/71/26/1/Ov
+ erview/q1/1/home/crvena-zvezda-meridianbet-cedevita-olimpija/
+URL:https://www.aba-liga.com/match/71/26/1/Overview/q1/1/home/crvena-zvezda
+ -meridianbet-cedevita-olimpija/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-81@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:Crvena zvezda Meridianbet vs Cibona
+DESCRIPTION:ROUND 9 · Group A · https://www.aba-liga.com/match/81/26/1/Ov
+ erview/q1/1/home/crvena-zvezda-meridianbet-cibona/
+URL:https://www.aba-liga.com/match/81/26/1/Overview/q1/1/home/crvena-zvezda
+ -meridianbet-cibona/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-91@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+SUMMARY:Cedevita Olimpija vs Crvena zvezda Meridianbet
+DESCRIPTION:ROUND 10 · Group A · https://www.aba-liga.com/match/91/26/1/O
+ verview/q1/1/home/cedevita-olimpija-crvena-zvezda-meridianbet/
+URL:https://www.aba-liga.com/match/91/26/1/Overview/q1/1/home/cedevita-olim
+ pija-crvena-zvezda-meridianbet/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-101@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
+SUMMARY:Crvena zvezda Meridianbet vs Borac Mozzart
+DESCRIPTION:ROUND 11 · Group A · https://www.aba-liga.com/match/101/26/1/
+ Overview/q1/1/home/crvena-zvezda-meridianbet-borac-mozzart/
+URL:https://www.aba-liga.com/match/101/26/1/Overview/q1/1/home/crvena-zvezd
+ a-meridianbet-borac-mozzart/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-111@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261220
+DTEND;VALUE=DATE:20261221
+SUMMARY:Crvena zvezda Meridianbet vs FMP
+DESCRIPTION:ROUND 12 · Group A · https://www.aba-liga.com/match/111/26/1/
+ Overview/q1/1/home/crvena-zvezda-meridianbet-fmp/
+URL:https://www.aba-liga.com/match/111/26/1/Overview/q1/1/home/crvena-zvezd
+ a-meridianbet-fmp/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-121@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261227
+DTEND;VALUE=DATE:20261228
+SUMMARY:Slovan Bratislava vs Crvena zvezda Meridianbet
+DESCRIPTION:ROUND 13 · Group A · https://www.aba-liga.com/match/121/26/1/
+ Overview/q1/1/home/slovan-bratislava-crvena-zvezda-meridianbet/
+URL:https://www.aba-liga.com/match/121/26/1/Overview/q1/1/home/slovan-brati
+ slava-crvena-zvezda-meridianbet/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-131@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;TZID=Europe/Ljubljana:20270103T170000
+DTEND;TZID=Europe/Ljubljana:20270103T190000
+SUMMARY:Cibona vs Crvena zvezda Meridianbet
+DESCRIPTION:ROUND 14 · Group A · https://www.aba-liga.com/match/131/26/1/
+ Overview/q1/1/home/cibona-crvena-zvezda-meridianbet/
+URL:https://www.aba-liga.com/match/131/26/1/Overview/q1/1/home/cibona-crven
+ a-zvezda-meridianbet/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-141@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270110
+DTEND;VALUE=DATE:20270111
+SUMMARY:Crvena zvezda Meridianbet vs Krka
+DESCRIPTION:ROUND 15 · Group A · https://www.aba-liga.com/match/141/26/1/
+ Overview/q1/1/home/crvena-zvezda-meridianbet-krka/
+URL:https://www.aba-liga.com/match/141/26/1/Overview/q1/1/home/crvena-zvezd
+ a-meridianbet-krka/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-151@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270117
+DTEND;VALUE=DATE:20270118
+SUMMARY:Budućnost VOLI vs Crvena zvezda Meridianbet
+DESCRIPTION:ROUND 16 · Group A · https://www.aba-liga.com/match/151/26/1/
+ Overview/q1/1/home/buducnost-voli-crvena-zvezda-meridianbet/
+URL:https://www.aba-liga.com/match/151/26/1/Overview/q1/1/home/buducnost-vo
+ li-crvena-zvezda-meridianbet/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-161@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270124
+DTEND;VALUE=DATE:20270125
+SUMMARY:Crvena zvezda Meridianbet vs Igokea m:tel
+DESCRIPTION:ROUND 17 · Group A · https://www.aba-liga.com/match/161/26/1/
+ Overview/q1/1/home/crvena-zvezda-meridianbet-igokea-m-tel/
+URL:https://www.aba-liga.com/match/161/26/1/Overview/q1/1/home/crvena-zvezd
+ a-meridianbet-igokea-m-tel/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-171@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270131
+DTEND;VALUE=DATE:20270201
+SUMMARY:HKK Široki TT Kabeli vs Crvena zvezda Meridianbet
+DESCRIPTION:ROUND 18 · Group A · https://www.aba-liga.com/match/171/26/1/
+ Overview/q1/1/home/hkk-siroki-tt-kabeli-crvena-zvezda-meridianbet/
+URL:https://www.aba-liga.com/match/171/26/1/Overview/q1/1/home/hkk-siroki-t
+ t-kabeli-crvena-zvezda-meridianbet/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,223 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//aba-league-calendar//ABA Liga//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:ABA Liga — SC Derby
+X-WR-TIMEZONE:Europe/Ljubljana
+BEGIN:VEVENT
+UID:aba-liga-match-10@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20260925
+DTEND;VALUE=DATE:20260926
+SUMMARY:SC Derby vs Spartak Office Shoes
+DESCRIPTION:ROUND 1 · Group B · https://www.aba-liga.com/match/10/26/1/Ov
+ erview/q1/1/home/sc-derby-spartak-office-shoes/
+URL:https://www.aba-liga.com/match/10/26/1/Overview/q1/1/home/sc-derby-spar
+ tak-office-shoes/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-19@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261004
+DTEND;VALUE=DATE:20261005
+SUMMARY:Zadar vs SC Derby
+DESCRIPTION:ROUND 2 · Group B · https://www.aba-liga.com/match/19/26/1/Ov
+ erview/q1/1/home/zadar-sc-derby/
+URL:https://www.aba-liga.com/match/19/26/1/Overview/q1/1/home/zadar-sc-derb
+ y/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-29@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261011
+DTEND;VALUE=DATE:20261012
+SUMMARY:SC Derby vs Bosna BH Telecom
+DESCRIPTION:ROUND 3 · Group B · https://www.aba-liga.com/match/29/26/1/Ov
+ erview/q1/1/home/sc-derby-bosna-bh-telecom/
+URL:https://www.aba-liga.com/match/29/26/1/Overview/q1/1/home/sc-derby-bosn
+ a-bh-telecom/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-37@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261019
+DTEND;VALUE=DATE:20261020
+SUMMARY:Dubai Basketball vs SC Derby
+DESCRIPTION:ROUND 4 · Group B · https://www.aba-liga.com/match/37/26/1/Ov
+ erview/q1/1/home/dubai-basketball-sc-derby/
+URL:https://www.aba-liga.com/match/37/26/1/Overview/q1/1/home/dubai-basketb
+ all-sc-derby/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-50@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261027
+SUMMARY:SC Derby vs U-BT Cluj-Napoca
+DESCRIPTION:ROUND 5 · Group B · https://www.aba-liga.com/match/50/26/1/Ov
+ erview/q1/1/home/sc-derby-u-bt-cluj-napoca/
+URL:https://www.aba-liga.com/match/50/26/1/Overview/q1/1/home/sc-derby-u-bt
+ -cluj-napoca/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-60@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:SC Derby vs Perspektiva Ilirija
+DESCRIPTION:ROUND 6 · Group B · https://www.aba-liga.com/match/60/26/1/Ov
+ erview/q1/1/home/sc-derby-perspektiva-ilirija/
+URL:https://www.aba-liga.com/match/60/26/1/Overview/q1/1/home/sc-derby-pers
+ pektiva-ilirija/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-66@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261108
+DTEND;VALUE=DATE:20261109
+SUMMARY:Partizan Mozzart Bet vs SC Derby
+DESCRIPTION:ROUND 7 · Group B · https://www.aba-liga.com/match/66/26/1/Ov
+ erview/q1/1/home/partizan-mozzart-bet-sc-derby/
+URL:https://www.aba-liga.com/match/66/26/1/Overview/q1/1/home/partizan-mozz
+ art-bet-sc-derby/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-80@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:SC Derby vs Vienna
+DESCRIPTION:ROUND 8 · Group B · https://www.aba-liga.com/match/80/26/1/Ov
+ erview/q1/1/home/sc-derby-vienna/
+URL:https://www.aba-liga.com/match/80/26/1/Overview/q1/1/home/sc-derby-vien
+ na/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-87@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;TZID=Europe/Ljubljana:20261122T120000
+DTEND;TZID=Europe/Ljubljana:20261122T140000
+SUMMARY:Mega Superbet vs SC Derby
+DESCRIPTION:ROUND 9 · Group B · https://www.aba-liga.com/match/87/26/1/Ov
+ erview/q1/1/home/mega-superbet-sc-derby/
+URL:https://www.aba-liga.com/match/87/26/1/Overview/q1/1/home/mega-superbet
+ -sc-derby/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-100@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;TZID=Europe/Ljubljana:20261205T170000
+DTEND;TZID=Europe/Ljubljana:20261205T190000
+SUMMARY:Vienna vs SC Derby
+DESCRIPTION:ROUND 10 · Group B · https://www.aba-liga.com/match/100/26/1/
+ Overview/q1/1/home/vienna-sc-derby/
+URL:https://www.aba-liga.com/match/100/26/1/Overview/q1/1/home/vienna-sc-de
+ rby/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-120@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261221
+DTEND;VALUE=DATE:20261222
+SUMMARY:Perspektiva Ilirija vs SC Derby
+DESCRIPTION:ROUND 12 · Group B · https://www.aba-liga.com/match/120/26/1/
+ Overview/q1/1/home/perspektiva-ilirija-sc-derby/
+URL:https://www.aba-liga.com/match/120/26/1/Overview/q1/1/home/perspektiva-
+ ilirija-sc-derby/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-130@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261228
+DTEND;VALUE=DATE:20261229
+SUMMARY:SC Derby vs Zadar
+DESCRIPTION:ROUND 13 · Group B · https://www.aba-liga.com/match/130/26/1/
+ Overview/q1/1/home/sc-derby-zadar/
+URL:https://www.aba-liga.com/match/130/26/1/Overview/q1/1/home/sc-derby-zad
+ ar/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-136@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270103
+DTEND;VALUE=DATE:20270104
+SUMMARY:SC Derby vs Partizan Mozzart Bet
+DESCRIPTION:ROUND 14 · Group B · https://www.aba-liga.com/match/136/26/1/
+ Overview/q1/1/home/sc-derby-partizan-mozzart-bet/
+URL:https://www.aba-liga.com/match/136/26/1/Overview/q1/1/home/sc-derby-par
+ tizan-mozzart-bet/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-150@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270111
+DTEND;VALUE=DATE:20270112
+SUMMARY:Bosna BH Telecom vs SC Derby
+DESCRIPTION:ROUND 15 · Group B · https://www.aba-liga.com/match/150/26/1/
+ Overview/q1/1/home/bosna-bh-telecom-sc-derby/
+URL:https://www.aba-liga.com/match/150/26/1/Overview/q1/1/home/bosna-bh-tel
+ ecom-sc-derby/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-157@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270118
+DTEND;VALUE=DATE:20270119
+SUMMARY:SC Derby vs Dubai Basketball
+DESCRIPTION:ROUND 16 · Group B · https://www.aba-liga.com/match/157/26/1/
+ Overview/q1/1/home/sc-derby-dubai-basketball/
+URL:https://www.aba-liga.com/match/157/26/1/Overview/q1/1/home/sc-derby-dub
+ ai-basketball/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-108@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270121
+DTEND;VALUE=DATE:20270122
+SUMMARY:U-BT Cluj-Napoca vs SC Derby
+DESCRIPTION:ROUND 11 · Group B · https://www.aba-liga.com/match/108/26/1/
+ Overview/q1/1/home/u-bt-cluj-napoca-sc-derby/
+URL:https://www.aba-liga.com/match/108/26/1/Overview/q1/1/home/u-bt-cluj-na
+ poca-sc-derby/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-170@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270124
+DTEND;VALUE=DATE:20270125
+SUMMARY:Spartak Office Shoes vs SC Derby
+DESCRIPTION:ROUND 17 · Group B · https://www.aba-liga.com/match/170/26/1/
+ Overview/q1/1/home/spartak-office-shoes-sc-derby/
+URL:https://www.aba-liga.com/match/170/26/1/Overview/q1/1/home/spartak-offi
+ ce-shoes-sc-derby/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-178@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270128
+DTEND;VALUE=DATE:20270129
+SUMMARY:SC Derby vs Mega Superbet
+DESCRIPTION:ROUND 18 · Group B · https://www.aba-liga.com/match/178/26/1/
+ Overview/q1/1/home/sc-derby-mega-superbet/
+URL:https://www.aba-liga.com/match/178/26/1/Overview/q1/1/home/sc-derby-meg
+ a-superbet/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

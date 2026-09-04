@@ -3,12 +3,21 @@ csv_path = "data/aba_liga_calendar.csv"
 timezone = "Europe/Ljubljana"
 default_duration_minutes = 120
 
-# macOS Calendar: the Personal calendar on the kulenovic.si Google account
+# macOS Calendar (optional). Leave calendar_name empty to skip local sync entirely
+# (e.g. when running in CI). The subscribable feeds below do not depend on this.
 calendar_name = "Personal"
 calendar_description = "timur@kulenovic.si"
 
-# Substring match against home/away team names (case-insensitive)
+# Substring match against home/away team names (case-insensitive).
+# Used by `sync` (local macOS Calendar) only; the .ics feeds cover every team.
 teams = [
   "Cedevita Olimpija",
   "Ilirija",
 ]
+
+# Subscribable iCalendar feeds (GitHub Pages static hosting).
+# `ics` writes per-team + all.ics into <ics_output_dir>/<ics_subdir>/ and an
+# index.html picker page into <ics_output_dir>/.
+ics_output_dir = "docs"
+ics_subdir = "ics"
+pages_base_url = "https://timurkulenovic.github.io/aba-league-calendar"

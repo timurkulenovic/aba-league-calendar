@@ -1,0 +1,223 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//aba-league-calendar//ABA Liga//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:ABA Liga — U-BT Cluj-Napoca
+X-WR-TIMEZONE:Europe/Ljubljana
+BEGIN:VEVENT
+UID:aba-liga-match-8@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;TZID=Europe/Ljubljana:20260927T120000
+DTEND;TZID=Europe/Ljubljana:20260927T140000
+SUMMARY:Mega Superbet vs U-BT Cluj-Napoca
+DESCRIPTION:ROUND 1 · Group B · https://www.aba-liga.com/match/8/26/1/Ove
+ rview/q1/1/home/mega-superbet-u-bt-cluj-napoca/
+URL:https://www.aba-liga.com/match/8/26/1/Overview/q1/1/home/mega-superbet-
+ u-bt-cluj-napoca/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-18@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;TZID=Europe/Ljubljana:20261003T170000
+DTEND;TZID=Europe/Ljubljana:20261003T190000
+SUMMARY:Vienna vs U-BT Cluj-Napoca
+DESCRIPTION:ROUND 2 · Group B · https://www.aba-liga.com/match/18/26/1/Ov
+ erview/q1/1/home/vienna-u-bt-cluj-napoca/
+URL:https://www.aba-liga.com/match/18/26/1/Overview/q1/1/home/vienna-u-bt-c
+ luj-napoca/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-27@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261010
+DTEND;VALUE=DATE:20261011
+SUMMARY:U-BT Cluj-Napoca vs Dubai Basketball
+DESCRIPTION:ROUND 3 · Group B · https://www.aba-liga.com/match/27/26/1/Ov
+ erview/q1/1/home/u-bt-cluj-napoca-dubai-basketball/
+URL:https://www.aba-liga.com/match/27/26/1/Overview/q1/1/home/u-bt-cluj-nap
+ oca-dubai-basketball/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-39@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261018
+DTEND;VALUE=DATE:20261019
+SUMMARY:Spartak Office Shoes vs U-BT Cluj-Napoca
+DESCRIPTION:ROUND 4 · Group B · https://www.aba-liga.com/match/39/26/1/Ov
+ erview/q1/1/home/spartak-office-shoes-u-bt-cluj-napoca/
+URL:https://www.aba-liga.com/match/39/26/1/Overview/q1/1/home/spartak-offic
+ e-shoes-u-bt-cluj-napoca/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-50@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261027
+SUMMARY:SC Derby vs U-BT Cluj-Napoca
+DESCRIPTION:ROUND 5 · Group B · https://www.aba-liga.com/match/50/26/1/Ov
+ erview/q1/1/home/sc-derby-u-bt-cluj-napoca/
+URL:https://www.aba-liga.com/match/50/26/1/Overview/q1/1/home/sc-derby-u-bt
+ -cluj-napoca/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-56@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:Partizan Mozzart Bet vs U-BT Cluj-Napoca
+DESCRIPTION:ROUND 6 · Group B · https://www.aba-liga.com/match/56/26/1/Ov
+ erview/q1/1/home/partizan-mozzart-bet-u-bt-cluj-napoca/
+URL:https://www.aba-liga.com/match/56/26/1/Overview/q1/1/home/partizan-mozz
+ art-bet-u-bt-cluj-napoca/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-67@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261108
+DTEND;VALUE=DATE:20261109
+SUMMARY:U-BT Cluj-Napoca vs Bosna BH Telecom
+DESCRIPTION:ROUND 7 · Group B · https://www.aba-liga.com/match/67/26/1/Ov
+ erview/q1/1/home/u-bt-cluj-napoca-bosna-bh-telecom/
+URL:https://www.aba-liga.com/match/67/26/1/Overview/q1/1/home/u-bt-cluj-nap
+ oca-bosna-bh-telecom/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-79@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261115
+SUMMARY:U-BT Cluj-Napoca vs Perspektiva Ilirija
+DESCRIPTION:ROUND 8 · Group B · https://www.aba-liga.com/match/79/26/1/Ov
+ erview/q1/1/home/u-bt-cluj-napoca-perspektiva-ilirija/
+URL:https://www.aba-liga.com/match/79/26/1/Overview/q1/1/home/u-bt-cluj-nap
+ oca-perspektiva-ilirija/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-88@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:U-BT Cluj-Napoca vs Zadar
+DESCRIPTION:ROUND 9 · Group B · https://www.aba-liga.com/match/88/26/1/Ov
+ erview/q1/1/home/u-bt-cluj-napoca-zadar/
+URL:https://www.aba-liga.com/match/88/26/1/Overview/q1/1/home/u-bt-cluj-nap
+ oca-zadar/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-99@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+SUMMARY:Bosna BH Telecom vs U-BT Cluj-Napoca
+DESCRIPTION:ROUND 10 · Group B · https://www.aba-liga.com/match/99/26/1/O
+ verview/q1/1/home/bosna-bh-telecom-u-bt-cluj-napoca/
+URL:https://www.aba-liga.com/match/99/26/1/Overview/q1/1/home/bosna-bh-tele
+ com-u-bt-cluj-napoca/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-118@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261220
+DTEND;VALUE=DATE:20261221
+SUMMARY:Zadar vs U-BT Cluj-Napoca
+DESCRIPTION:ROUND 12 · Group B · https://www.aba-liga.com/match/118/26/1/
+ Overview/q1/1/home/zadar-u-bt-cluj-napoca/
+URL:https://www.aba-liga.com/match/118/26/1/Overview/q1/1/home/zadar-u-bt-c
+ luj-napoca/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-126@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261226
+DTEND;VALUE=DATE:20261227
+SUMMARY:U-BT Cluj-Napoca vs Partizan Mozzart Bet
+DESCRIPTION:ROUND 13 · Group B · https://www.aba-liga.com/match/126/26/1/
+ Overview/q1/1/home/u-bt-cluj-napoca-partizan-mozzart-bet/
+URL:https://www.aba-liga.com/match/126/26/1/Overview/q1/1/home/u-bt-cluj-na
+ poca-partizan-mozzart-bet/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-137@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270104
+DTEND;VALUE=DATE:20270105
+SUMMARY:Dubai Basketball vs U-BT Cluj-Napoca
+DESCRIPTION:ROUND 14 · Group B · https://www.aba-liga.com/match/137/26/1/
+ Overview/q1/1/home/dubai-basketball-u-bt-cluj-napoca/
+URL:https://www.aba-liga.com/match/137/26/1/Overview/q1/1/home/dubai-basket
+ ball-u-bt-cluj-napoca/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-148@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270110
+DTEND;VALUE=DATE:20270111
+SUMMARY:U-BT Cluj-Napoca vs Spartak Office Shoes
+DESCRIPTION:ROUND 15 · Group B · https://www.aba-liga.com/match/148/26/1/
+ Overview/q1/1/home/u-bt-cluj-napoca-spartak-office-shoes/
+URL:https://www.aba-liga.com/match/148/26/1/Overview/q1/1/home/u-bt-cluj-na
+ poca-spartak-office-shoes/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-158@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270116
+DTEND;VALUE=DATE:20270117
+SUMMARY:U-BT Cluj-Napoca vs Mega Superbet
+DESCRIPTION:ROUND 16 · Group B · https://www.aba-liga.com/match/158/26/1/
+ Overview/q1/1/home/u-bt-cluj-napoca-mega-superbet/
+URL:https://www.aba-liga.com/match/158/26/1/Overview/q1/1/home/u-bt-cluj-na
+ poca-mega-superbet/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-108@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270121
+DTEND;VALUE=DATE:20270122
+SUMMARY:U-BT Cluj-Napoca vs SC Derby
+DESCRIPTION:ROUND 11 · Group B · https://www.aba-liga.com/match/108/26/1/
+ Overview/q1/1/home/u-bt-cluj-napoca-sc-derby/
+URL:https://www.aba-liga.com/match/108/26/1/Overview/q1/1/home/u-bt-cluj-na
+ poca-sc-derby/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-167@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270124
+DTEND;VALUE=DATE:20270125
+SUMMARY:U-BT Cluj-Napoca vs Vienna
+DESCRIPTION:ROUND 17 · Group B · https://www.aba-liga.com/match/167/26/1/
+ Overview/q1/1/home/u-bt-cluj-napoca-vienna/
+URL:https://www.aba-liga.com/match/167/26/1/Overview/q1/1/home/u-bt-cluj-na
+ poca-vienna/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-179@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270128
+DTEND;VALUE=DATE:20270129
+SUMMARY:Perspektiva Ilirija vs U-BT Cluj-Napoca
+DESCRIPTION:ROUND 18 · Group B · https://www.aba-liga.com/match/179/26/1/
+ Overview/q1/1/home/perspektiva-ilirija-u-bt-cluj-napoca/
+URL:https://www.aba-liga.com/match/179/26/1/Overview/q1/1/home/perspektiva-
+ ilirija-u-bt-cluj-napoca/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

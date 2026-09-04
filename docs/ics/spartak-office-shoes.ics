@@ -1,0 +1,223 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//aba-league-calendar//ABA Liga//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:ABA Liga — Spartak Office Shoes
+X-WR-TIMEZONE:Europe/Ljubljana
+BEGIN:VEVENT
+UID:aba-liga-match-10@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20260925
+DTEND;VALUE=DATE:20260926
+SUMMARY:SC Derby vs Spartak Office Shoes
+DESCRIPTION:ROUND 1 · Group B · https://www.aba-liga.com/match/10/26/1/Ov
+ erview/q1/1/home/sc-derby-spartak-office-shoes/
+URL:https://www.aba-liga.com/match/10/26/1/Overview/q1/1/home/sc-derby-spar
+ tak-office-shoes/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-20@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261004
+DTEND;VALUE=DATE:20261005
+SUMMARY:Spartak Office Shoes vs Bosna BH Telecom
+DESCRIPTION:ROUND 2 · Group B · https://www.aba-liga.com/match/20/26/1/Ov
+ erview/q1/1/home/spartak-office-shoes-bosna-bh-telecom/
+URL:https://www.aba-liga.com/match/20/26/1/Overview/q1/1/home/spartak-offic
+ e-shoes-bosna-bh-telecom/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-30@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261010
+DTEND;VALUE=DATE:20261011
+SUMMARY:Perspektiva Ilirija vs Spartak Office Shoes
+DESCRIPTION:ROUND 3 · Group B · https://www.aba-liga.com/match/30/26/1/Ov
+ erview/q1/1/home/perspektiva-ilirija-spartak-office-shoes/
+URL:https://www.aba-liga.com/match/30/26/1/Overview/q1/1/home/perspektiva-i
+ lirija-spartak-office-shoes/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-39@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261018
+DTEND;VALUE=DATE:20261019
+SUMMARY:Spartak Office Shoes vs U-BT Cluj-Napoca
+DESCRIPTION:ROUND 4 · Group B · https://www.aba-liga.com/match/39/26/1/Ov
+ erview/q1/1/home/spartak-office-shoes-u-bt-cluj-napoca/
+URL:https://www.aba-liga.com/match/39/26/1/Overview/q1/1/home/spartak-offic
+ e-shoes-u-bt-cluj-napoca/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-46@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261025
+DTEND;VALUE=DATE:20261026
+SUMMARY:Spartak Office Shoes vs Partizan Mozzart Bet
+DESCRIPTION:ROUND 5 · Group B · https://www.aba-liga.com/match/46/26/1/Ov
+ erview/q1/1/home/spartak-office-shoes-partizan-mozzart-bet/
+URL:https://www.aba-liga.com/match/46/26/1/Overview/q1/1/home/spartak-offic
+ e-shoes-partizan-mozzart-bet/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-58@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;TZID=Europe/Ljubljana:20261101T120000
+DTEND;TZID=Europe/Ljubljana:20261101T140000
+SUMMARY:Mega Superbet vs Spartak Office Shoes
+DESCRIPTION:ROUND 6 · Group B · https://www.aba-liga.com/match/58/26/1/Ov
+ erview/q1/1/home/mega-superbet-spartak-office-shoes/
+URL:https://www.aba-liga.com/match/58/26/1/Overview/q1/1/home/mega-superbet
+ -spartak-office-shoes/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-69@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261106
+DTEND;VALUE=DATE:20261107
+SUMMARY:Spartak Office Shoes vs Zadar
+DESCRIPTION:ROUND 7 · Group B · https://www.aba-liga.com/match/69/26/1/Ov
+ erview/q1/1/home/spartak-office-shoes-zadar/
+URL:https://www.aba-liga.com/match/69/26/1/Overview/q1/1/home/spartak-offic
+ e-shoes-zadar/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-77@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+SUMMARY:Dubai Basketball vs Spartak Office Shoes
+DESCRIPTION:ROUND 8 · Group B · https://www.aba-liga.com/match/77/26/1/Ov
+ erview/q1/1/home/dubai-basketball-spartak-office-shoes/
+URL:https://www.aba-liga.com/match/77/26/1/Overview/q1/1/home/dubai-basketb
+ all-spartak-office-shoes/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-89@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:Spartak Office Shoes vs Vienna
+DESCRIPTION:ROUND 9 · Group B · https://www.aba-liga.com/match/89/26/1/Ov
+ erview/q1/1/home/spartak-office-shoes-vienna/
+URL:https://www.aba-liga.com/match/89/26/1/Overview/q1/1/home/spartak-offic
+ e-shoes-vienna/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-97@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+SUMMARY:Spartak Office Shoes vs Dubai Basketball
+DESCRIPTION:ROUND 10 · Group B · https://www.aba-liga.com/match/97/26/1/O
+ verview/q1/1/home/spartak-office-shoes-dubai-basketball/
+URL:https://www.aba-liga.com/match/97/26/1/Overview/q1/1/home/spartak-offic
+ e-shoes-dubai-basketball/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-106@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
+SUMMARY:Partizan Mozzart Bet vs Spartak Office Shoes
+DESCRIPTION:ROUND 11 · Group B · https://www.aba-liga.com/match/106/26/1/
+ Overview/q1/1/home/partizan-mozzart-bet-spartak-office-shoes/
+URL:https://www.aba-liga.com/match/106/26/1/Overview/q1/1/home/partizan-moz
+ zart-bet-spartak-office-shoes/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-119@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261218
+DTEND;VALUE=DATE:20261219
+SUMMARY:Bosna BH Telecom vs Spartak Office Shoes
+DESCRIPTION:ROUND 12 · Group B · https://www.aba-liga.com/match/119/26/1/
+ Overview/q1/1/home/bosna-bh-telecom-spartak-office-shoes/
+URL:https://www.aba-liga.com/match/119/26/1/Overview/q1/1/home/bosna-bh-tel
+ ecom-spartak-office-shoes/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-128@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261226
+DTEND;VALUE=DATE:20261227
+SUMMARY:Spartak Office Shoes vs Mega Superbet
+DESCRIPTION:ROUND 13 · Group B · https://www.aba-liga.com/match/128/26/1/
+ Overview/q1/1/home/spartak-office-shoes-mega-superbet/
+URL:https://www.aba-liga.com/match/128/26/1/Overview/q1/1/home/spartak-offi
+ ce-shoes-mega-superbet/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-139@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270101
+DTEND;VALUE=DATE:20270102
+SUMMARY:Zadar vs Spartak Office Shoes
+DESCRIPTION:ROUND 14 · Group B · https://www.aba-liga.com/match/139/26/1/
+ Overview/q1/1/home/zadar-spartak-office-shoes/
+URL:https://www.aba-liga.com/match/139/26/1/Overview/q1/1/home/zadar-sparta
+ k-office-shoes/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-148@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270110
+DTEND;VALUE=DATE:20270111
+SUMMARY:U-BT Cluj-Napoca vs Spartak Office Shoes
+DESCRIPTION:ROUND 15 · Group B · https://www.aba-liga.com/match/148/26/1/
+ Overview/q1/1/home/u-bt-cluj-napoca-spartak-office-shoes/
+URL:https://www.aba-liga.com/match/148/26/1/Overview/q1/1/home/u-bt-cluj-na
+ poca-spartak-office-shoes/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-159@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270115
+DTEND;VALUE=DATE:20270116
+SUMMARY:Spartak Office Shoes vs Perspektiva Ilirija
+DESCRIPTION:ROUND 16 · Group B · https://www.aba-liga.com/match/159/26/1/
+ Overview/q1/1/home/spartak-office-shoes-perspektiva-ilirija/
+URL:https://www.aba-liga.com/match/159/26/1/Overview/q1/1/home/spartak-offi
+ ce-shoes-perspektiva-ilirija/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-170@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270124
+DTEND;VALUE=DATE:20270125
+SUMMARY:Spartak Office Shoes vs SC Derby
+DESCRIPTION:ROUND 17 · Group B · https://www.aba-liga.com/match/170/26/1/
+ Overview/q1/1/home/spartak-office-shoes-sc-derby/
+URL:https://www.aba-liga.com/match/170/26/1/Overview/q1/1/home/spartak-offi
+ ce-shoes-sc-derby/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-180@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;TZID=Europe/Ljubljana:20270130T170000
+DTEND;TZID=Europe/Ljubljana:20270130T190000
+SUMMARY:Vienna vs Spartak Office Shoes
+DESCRIPTION:ROUND 18 · Group B · https://www.aba-liga.com/match/180/26/1/
+ Overview/q1/1/home/vienna-spartak-office-shoes/
+URL:https://www.aba-liga.com/match/180/26/1/Overview/q1/1/home/vienna-spart
+ ak-office-shoes/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

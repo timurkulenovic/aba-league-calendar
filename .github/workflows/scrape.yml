@@ -1,0 +1,53 @@
+name: Daily scrape
+
+on:
+  schedule:
+    # 06:30 UTC every day (~08:30 Europe/Ljubljana in summer, 07:30 in winter)
+    - cron: "30 6 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pages: read
+
+concurrency:
+  group: daily-scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Fetch + generate feeds
+        env:
+          PYTHONPATH: src
+        run: |
+          python3 -m aba_calendar fetch
+          python3 -m aba_calendar ics
+
+      - name: Detect changes
+        id: diff
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit & push
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: daily scrape $(date -u +%Y-%m-%d)"
+          git push

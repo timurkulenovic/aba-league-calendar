@@ -1,0 +1,219 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//aba-league-calendar//ABA Liga//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:ABA Liga — Cibona
+X-WR-TIMEZONE:Europe/Ljubljana
+BEGIN:VEVENT
+UID:aba-liga-match-2@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20260926
+DTEND;VALUE=DATE:20260927
+SUMMARY:Budućnost VOLI vs Cibona
+DESCRIPTION:ROUND 1 · Group A · https://www.aba-liga.com/match/2/26/1/Ove
+ rview/q1/1/home/buducnost-voli-cibona/
+URL:https://www.aba-liga.com/match/2/26/1/Overview/q1/1/home/buducnost-voli
+ -cibona/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-12@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261003
+DTEND;VALUE=DATE:20261004
+SUMMARY:Cedevita Olimpija vs Cibona
+DESCRIPTION:ROUND 2 · Group A · https://www.aba-liga.com/match/12/26/1/Ov
+ erview/q1/1/home/cedevita-olimpija-cibona/
+URL:https://www.aba-liga.com/match/12/26/1/Overview/q1/1/home/cedevita-olim
+ pija-cibona/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-23@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261012
+DTEND;VALUE=DATE:20261013
+SUMMARY:Cibona vs Slovan Bratislava
+DESCRIPTION:ROUND 3 · Group A · https://www.aba-liga.com/match/23/26/1/Ov
+ erview/q1/1/home/cibona-slovan-bratislava/
+URL:https://www.aba-liga.com/match/23/26/1/Overview/q1/1/home/cibona-slovan
+ -bratislava/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-34@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+SUMMARY:Cibona vs Borac Mozzart
+DESCRIPTION:ROUND 4 · Group A · https://www.aba-liga.com/match/34/26/1/Ov
+ erview/q1/1/home/cibona-borac-mozzart/
+URL:https://www.aba-liga.com/match/34/26/1/Overview/q1/1/home/cibona-borac-
+ mozzart/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-43@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261027
+SUMMARY:Cibona vs Krka
+DESCRIPTION:ROUND 5 · Group A · https://www.aba-liga.com/match/43/26/1/Ov
+ erview/q1/1/home/cibona-krka/
+URL:https://www.aba-liga.com/match/43/26/1/Overview/q1/1/home/cibona-krka/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-54@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+SUMMARY:Cibona vs Igokea m:tel
+DESCRIPTION:ROUND 6 · Group A · https://www.aba-liga.com/match/54/26/1/Ov
+ erview/q1/1/home/cibona-igokea-m-tel/
+URL:https://www.aba-liga.com/match/54/26/1/Overview/q1/1/home/cibona-igokea
+ -m-tel/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-64@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261109
+DTEND;VALUE=DATE:20261110
+SUMMARY:HKK Široki TT Kabeli vs Cibona
+DESCRIPTION:ROUND 7 · Group A · https://www.aba-liga.com/match/64/26/1/Ov
+ erview/q1/1/home/hkk-siroki-tt-kabeli-cibona/
+URL:https://www.aba-liga.com/match/64/26/1/Overview/q1/1/home/hkk-siroki-tt
+ -kabeli-cibona/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-73@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261114
+SUMMARY:Cibona vs FMP
+DESCRIPTION:ROUND 8 · Group A · https://www.aba-liga.com/match/73/26/1/Ov
+ erview/q1/1/home/cibona-fmp/
+URL:https://www.aba-liga.com/match/73/26/1/Overview/q1/1/home/cibona-fmp/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-81@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:Crvena zvezda Meridianbet vs Cibona
+DESCRIPTION:ROUND 9 · Group A · https://www.aba-liga.com/match/81/26/1/Ov
+ erview/q1/1/home/crvena-zvezda-meridianbet-cibona/
+URL:https://www.aba-liga.com/match/81/26/1/Overview/q1/1/home/crvena-zvezda
+ -meridianbet-cibona/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-93@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261205
+SUMMARY:Igokea m:tel vs Cibona
+DESCRIPTION:ROUND 10 · Group A · https://www.aba-liga.com/match/93/26/1/O
+ verview/q1/1/home/igokea-m-tel-cibona/
+URL:https://www.aba-liga.com/match/93/26/1/Overview/q1/1/home/igokea-m-tel-
+ cibona/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-102@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261212
+DTEND;VALUE=DATE:20261213
+SUMMARY:Cibona vs Budućnost VOLI
+DESCRIPTION:ROUND 11 · Group A · https://www.aba-liga.com/match/102/26/1/
+ Overview/q1/1/home/cibona-buducnost-voli/
+URL:https://www.aba-liga.com/match/102/26/1/Overview/q1/1/home/cibona-buduc
+ nost-voli/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-114@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261219
+DTEND;VALUE=DATE:20261220
+SUMMARY:Borac Mozzart vs Cibona
+DESCRIPTION:ROUND 12 · Group A · https://www.aba-liga.com/match/114/26/1/
+ Overview/q1/1/home/borac-mozzart-cibona/
+URL:https://www.aba-liga.com/match/114/26/1/Overview/q1/1/home/borac-mozzar
+ t-cibona/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-124@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20261227
+DTEND;VALUE=DATE:20261228
+SUMMARY:Krka vs Cibona
+DESCRIPTION:ROUND 13 · Group A · https://www.aba-liga.com/match/124/26/1/
+ Overview/q1/1/home/krka-cibona/
+URL:https://www.aba-liga.com/match/124/26/1/Overview/q1/1/home/krka-cibona/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-131@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;TZID=Europe/Ljubljana:20270103T170000
+DTEND;TZID=Europe/Ljubljana:20270103T190000
+SUMMARY:Cibona vs Crvena zvezda Meridianbet
+DESCRIPTION:ROUND 14 · Group A · https://www.aba-liga.com/match/131/26/1/
+ Overview/q1/1/home/cibona-crvena-zvezda-meridianbet/
+URL:https://www.aba-liga.com/match/131/26/1/Overview/q1/1/home/cibona-crven
+ a-zvezda-meridianbet/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-143@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270110
+SUMMARY:FMP vs Cibona
+DESCRIPTION:ROUND 15 · Group A · https://www.aba-liga.com/match/143/26/1/
+ Overview/q1/1/home/fmp-cibona/
+URL:https://www.aba-liga.com/match/143/26/1/Overview/q1/1/home/fmp-cibona/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-153@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270117
+DTEND;VALUE=DATE:20270118
+SUMMARY:Cibona vs HKK Široki TT Kabeli
+DESCRIPTION:ROUND 16 · Group A · https://www.aba-liga.com/match/153/26/1/
+ Overview/q1/1/home/cibona-hkk-siroki-tt-kabeli/
+URL:https://www.aba-liga.com/match/153/26/1/Overview/q1/1/home/cibona-hkk-s
+ iroki-tt-kabeli/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-163@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270123
+DTEND;VALUE=DATE:20270124
+SUMMARY:Cibona vs Cedevita Olimpija
+DESCRIPTION:ROUND 17 · Group A · https://www.aba-liga.com/match/163/26/1/
+ Overview/q1/1/home/cibona-cedevita-olimpija/
+URL:https://www.aba-liga.com/match/163/26/1/Overview/q1/1/home/cibona-cedev
+ ita-olimpija/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:aba-liga-match-174@aba-league-calendar
+DTSTAMP:20260904T091528Z
+DTSTART;VALUE=DATE:20270131
+DTEND;VALUE=DATE:20270201
+SUMMARY:Slovan Bratislava vs Cibona
+DESCRIPTION:ROUND 18 · Group A · https://www.aba-liga.com/match/174/26/1/
+ Overview/q1/1/home/slovan-bratislava-cibona/
+URL:https://www.aba-liga.com/match/174/26/1/Overview/q1/1/home/slovan-brati
+ slava-cibona/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
