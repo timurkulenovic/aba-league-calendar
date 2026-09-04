@@ -179,6 +179,7 @@ button:active { transform: scale(0.97); }
 .btn-sub:hover { background: #7dd3fc; }
 .btn-sec { background: #334155; color: var(--text); }
 .btn-sec:hover { background: #475569; }
+a.btn { text-decoration: none; text-align: center; display: inline-flex; align-items: center; justify-content: center; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
 .card {
   background: var(--card); border: 1px solid var(--border); border-radius: 14px;
@@ -189,7 +190,7 @@ button:active { transform: scale(0.97); }
 .card .name { font-size: 1.05rem; }
 .card .meta { color: var(--muted); font-size: 0.82rem; }
 .card .row { display: flex; gap: 8px; flex-wrap: wrap; }
-.card .row button { flex: 1; min-width: 0; padding: 8px 10px; font-size: 0.82rem; }
+.card .row > * { flex: 1; min-width: 0; padding: 8px 10px; font-size: 0.82rem; }
 .all-card { border-color: var(--accent); }
 footer { margin-top: 40px; color: var(--muted); font-size: 0.82rem; text-align: center; }
 a { color: var(--accent); }
@@ -198,12 +199,12 @@ a { color: var(--accent); }
 
 def _team_card(team: str, ics_url: str, webcal_url: str, gcal_url: str, n: int) -> str:
     name = html.escape(team)
-    return f"""      <div class="card" data-team="{html.escape(slugify(team))}">
+    return f"""      <div class="card" data-team="{html.escape(slugify(team))}" data-webcal="{webcal_url}">
         <label><input type="checkbox" data-team="{name}"> <span class="name">{name}</span></label>
         <div class="meta">{n} matches</div>
         <div class="row">
-          <button class="btn-sub" onclick="window.location.href='{webcal_url}'">Apple</button>
-          <button class="btn-sec" onclick="window.open('{gcal_url}','_blank')">Google</button>
+          <a class="btn btn-sub" href="{webcal_url}">Apple</a>
+          <a class="btn btn-sec" href="{gcal_url}" target="_blank" rel="noopener">Google</a>
           <button class="btn-sec" onclick="copy('{ics_url}', this)">Copy</button>
         </div>
       </div>"""
@@ -233,12 +234,12 @@ def render_index(
     all_gcal = gcal("all")
 
     cards = [
-        f"""      <div class="card all-card">
+        f"""      <div class="card all-card" data-team="__all__" data-webcal="{all_webcal}">
         <label><input type="checkbox" data-team="__all__"> <span class="name">All matches</span></label>
         <div class="meta">{all_count} matches · every team</div>
         <div class="row">
-          <button class="btn-sub" onclick="window.location.href='{all_webcal}'">Apple</button>
-          <button class="btn-sec" onclick="window.open('{all_gcal}','_blank')">Google</button>
+          <a class="btn btn-sub" href="{all_webcal}">Apple</a>
+          <a class="btn btn-sec" href="{all_gcal}" target="_blank" rel="noopener">Google</a>
           <button class="btn-sec" onclick="copy('{all_ics}', this)">Copy</button>
         </div>
       </div>"""
@@ -295,10 +296,10 @@ def render_index(
   function subscribeSelected() {{
     const sel = [...boxes()].filter(b => b.checked).map(b => b.closest('.card'));
     if (!sel.length) {{ alert('Pick at least one team first.'); return; }}
-    sel.forEach((card, i) => {{
-      const btn = card.querySelector('.btn-sub');
-      const url = btn.getAttribute('onclick').match(/'([^']+)'/)[1];
-      setTimeout(() => window.location.href = url, i * 400);
+    if (sel.length > 5 && !confirm('This will open ' + sel.length + ' calendar subscriptions. Continue?')) return;
+    sel.forEach(card => {{
+      const url = card.getAttribute('data-webcal');
+      window.open(url, '_blank');
     }});
   }}
   function copy(url, btn) {{
