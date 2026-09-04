@@ -20,4 +20,4 @@ teams = [
 # index.html picker page into <ics_output_dir>/.
 ics_output_dir = "docs"
 ics_subdir = "ics"
-pages_base_url = "https://timurkulenovic.github.io/aba-league-calendar"
+pages_base_url = "https://kulenovic.si/aba-league-calendar"
