@@ -157,22 +157,23 @@ body {
   background: linear-gradient(180deg, #0b1120 0%, #0f172a 100%); color: var(--text);
   min-height: 100vh;
 }
-.wrap { max-width: 920px; margin: 0 auto; padding: 48px 24px 80px; }
+.wrap { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
 h1 { font-size: 2.2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
 h1 .grad {
   background: linear-gradient(90deg, var(--accent), var(--accent2));
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
+h2 { font-size: 1.1rem; margin: 0 0 12px; }
 .sub { color: var(--muted); font-size: 1.05rem; margin: 0 0 8px; }
-.hint { color: var(--muted); font-size: 0.9rem; margin: 0 0 28px; }
+.hint { color: var(--muted); font-size: 0.9rem; margin: 0 0 20px; }
 .toolbar {
   display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
-  margin-bottom: 24px; padding: 14px 16px; background: var(--card);
+  margin-bottom: 20px; padding: 14px 16px; background: var(--card);
   border: 1px solid var(--border); border-radius: 12px;
 }
 .toolbar .count { color: var(--muted); font-size: 0.9rem; margin-right: auto; }
 button, .btn {
-  border: 0; cursor: pointer; font-size: 0.9rem; font-weight: 600;
+  border: 0; cursor: pointer; font-size: 0.88rem; font-weight: 600;
   padding: 9px 14px; border-radius: 8px; transition: transform .08s, background .15s;
 }
 button:active { transform: scale(0.97); }
@@ -181,35 +182,23 @@ button:active { transform: scale(0.97); }
 .btn-sec { background: #334155; color: var(--text); }
 .btn-sec:hover { background: #475569; }
 a.btn { text-decoration: none; text-align: center; display: inline-flex; align-items: center; justify-content: center; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
-.card {
-  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
-  padding: 16px 18px; display: flex; flex-direction: column; gap: 10px;
-}
-.card label { display: flex; align-items: center; gap: 10px; font-weight: 600; cursor: pointer; }
-.card input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--accent); }
-.card .name { font-size: 1.05rem; }
-.card .meta { color: var(--muted); font-size: 0.82rem; }
-.card .row { display: flex; gap: 8px; flex-wrap: wrap; }
-.card .row > * { flex: 1; min-width: 0; padding: 8px 10px; font-size: 0.82rem; }
-.all-card { border-color: var(--accent); }
+.teams { list-style: none; padding: 0; margin: 0 0 28px; }
+.teams li { border-bottom: 1px solid var(--border); }
+.teams li:first-child { border-top: 1px solid var(--border); }
+.teams label { display: flex; align-items: center; gap: 12px; padding: 12px 8px; cursor: pointer; font-size: 1rem; }
+.teams input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--accent); }
+.teams .meta { color: var(--muted); font-size: 0.8rem; margin-left: auto; }
+.selected { display: none; }
+.selected.show { display: block; }
+.sel-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 12px 8px; border-bottom: 1px solid var(--border); }
+.sel-row:first-child { border-top: 1px solid var(--border); }
+.sel-row .name { font-weight: 600; min-width: 140px; }
+.sel-row .links { display: flex; gap: 8px; margin-left: auto; }
+.sel-row .links > * { padding: 7px 12px; font-size: 0.82rem; }
 footer { margin-top: 40px; color: var(--muted); font-size: 0.82rem; text-align: center; }
 a { color: var(--accent); }
 code { background: #0b1120; padding: 1px 5px; border-radius: 4px; font-size: 0.85em; color: var(--accent); }
 """
-
-
-def _team_card(team: str, ics_url: str, webcal_url: str, gcal_url: str, n: int) -> str:
-    name = html.escape(team)
-    return f"""      <div class="card" data-team="{html.escape(slugify(team))}" data-webcal="{webcal_url}" data-gcal="{gcal_url}">
-        <label><input type="checkbox" data-team="{name}"> <span class="name">{name}</span></label>
-        <div class="meta">{n} matches</div>
-        <div class="row">
-          <a class="btn btn-sub" href="{gcal_url}" target="_blank" rel="noopener">Google</a>
-          <a class="btn btn-sub" href="{webcal_url}">Apple</a>
-          <button class="btn-sec" onclick="copy('{ics_url}', this)">Copy</button>
-        </div>
-      </div>"""
 
 
 def render_index(
@@ -218,7 +207,10 @@ def render_index(
     base_url: str,
     ics_dir: str,
 ) -> str:
-    """Render the team-picker index page."""
+    """Render the team-picker index page as an alphabetical list.
+
+    Subscribe links are shown only for the teams the user checks.
+    """
     norm_base = base_url.rstrip("/")
     rel = ics_dir.strip("/")
 
@@ -233,26 +225,36 @@ def render_index(
         # webcal:// (URL-encoded) — it signals "subscribe to external feed".
         return f"https://calendar.google.com/calendar/render?cid={quote(webcal(slug), safe='')}"
 
-    all_ics = ics_path("all")
-    all_webcal = webcal("all")
-    all_gcal = gcal("all")
+    def entry(name: str, slug: str, n: int) -> dict:
+        return {
+            "name": name,
+            "webcal": webcal(slug),
+            "gcal": gcal(slug),
+            "ics": ics_path(slug),
+            "n": n,
+        }
 
-    cards = [
-        f"""      <div class="card all-card" data-team="__all__" data-webcal="{all_webcal}" data-gcal="{all_gcal}">
-        <label><input type="checkbox" data-team="__all__"> <span class="name">All matches</span></label>
-        <div class="meta">{all_count} matches · every team</div>
-        <div class="row">
-          <a class="btn btn-sub" href="{all_gcal}" target="_blank" rel="noopener">Google</a>
-          <a class="btn btn-sub" href="{all_webcal}">Apple</a>
-          <button class="btn-sec" onclick="copy('{all_ics}', this)">Copy</button>
-        </div>
-      </div>"""
-    ]
-    for team, n in teams:
-        slug = slugify(team)
-        cards.append(_team_card(team, ics_path(slug), webcal(slug), gcal(slug), n))
+    all_entry = entry("All matches", "all", all_count)
+    team_entries = sorted(
+        (entry(team, slugify(team), n) for team, n in teams),
+        key=lambda e: e["name"].casefold(),
+    )
 
-    cards_html = "\n".join(cards)
+    def list_item(e: dict, is_all: bool = False) -> str:
+        name = html.escape(e["name"])
+        label = "__all__" if is_all else name
+        meta = f"{e['n']} matches" + (" · every team" if is_all else "")
+        return (
+            f'      <li><label><input type="checkbox" data-team="{label}" '
+            f'data-name="{name}" data-webcal="{e["webcal"]}" '
+            f'data-gcal="{e["gcal"]}" data-ics="{e["ics"]}"> '
+            f'<span class="name">{name}</span>'
+            f'<span class="meta">{meta}</span></label></li>'
+        )
+
+    teams_html = "\n".join(
+        [list_item(all_entry, is_all=True)] + [list_item(e) for e in team_entries]
+    )
 
     return f"""<!doctype html>
 <html lang="en">
@@ -266,18 +268,23 @@ def render_index(
 <div class="wrap">
   <h1><span class="grad">ABA Liga</span> calendars</h1>
   <p class="sub">Subscribable iCalendar feeds for the 2026/27 ABA Liga season.</p>
-  <p class="hint">Pick the teams you care about and subscribe to each feed once — your calendar app pulls updates automatically. Use <b>Google</b> or <b>Apple</b> to subscribe directly, or <b>Copy</b> the URL and add it via “subscribe from URL” in any other calendar app.</p>
+  <p class="hint">Check the teams you follow — subscribe links appear below for your selection. Pick <b>Google</b> or <b>Apple</b> to subscribe directly, or <b>Copy</b> the URL for any other calendar app.</p>
   <p class="hint"><b>Google not working?</b> Google’s one-click is flaky. If it says “unable to open calendar”, open Google Calendar → Settings → Add calendar → From URL → paste the copied <code>https://…/*.ics</code> link. That always works.</p>
 
   <div class="toolbar">
     <span class="count" id="count">0 selected</span>
-    <button class="btn-sub" onclick="subscribeSelected('gcal')">Subscribe selected · Google</button>
-    <button class="btn-sub" onclick="subscribeSelected('webcal')">Subscribe selected · Apple</button>
-    <button class="btn-sec" onclick="toggleAll(this)">Select all teams</button>
+    <button class="btn-sub" onclick="subscribeSelected('gcal')">Subscribe · Google</button>
+    <button class="btn-sub" onclick="subscribeSelected('webcal')">Subscribe · Apple</button>
+    <button class="btn-sec" onclick="toggleAll(this)">Select all</button>
   </div>
 
-  <div class="grid">
-{cards_html}
+  <ul class="teams" id="teams">
+{teams_html}
+  </ul>
+
+  <div class="selected" id="selected">
+    <h2>Selected calendars</h2>
+    <div id="selected-list"></div>
   </div>
 
   <footer>
@@ -288,26 +295,44 @@ def render_index(
 </div>
 <script>
   const boxes = () => document.querySelectorAll('input[type=checkbox][data-team]');
-  function updateCount() {{
-    const n = [...boxes()].filter(b => b.checked).length;
-    document.getElementById('count').textContent = n + ' selected';
+  function update() {{
+    const checked = [...boxes()].filter(b => b.checked);
+    document.getElementById('count').textContent = checked.length + ' selected';
+    const panel = document.getElementById('selected');
+    const list = document.getElementById('selected-list');
+    list.innerHTML = '';
+    if (!checked.length) {{ panel.classList.remove('show'); return; }}
+    panel.classList.add('show');
+    checked.forEach(b => {{
+      const name = b.getAttribute('data-name');
+      const wc = b.getAttribute('data-webcal');
+      const gc = b.getAttribute('data-gcal');
+      const ic = b.getAttribute('data-ics');
+      const row = document.createElement('div');
+      row.className = 'sel-row';
+      row.innerHTML =
+        '<span class="name">' + name + '</span>' +
+        '<span class="links">' +
+          '<a class="btn btn-sub" href="' + gc + '" target="_blank" rel="noopener">Google</a>' +
+          '<a class="btn btn-sub" href="' + wc + '">Apple</a>' +
+          '<button class="btn-sec" onclick="copy(\\'' + ic + '\\', this)">Copy</button>' +
+        '</span>';
+      list.appendChild(row);
+    }});
   }}
-  document.addEventListener('change', e => {{ if (e.target.matches('[data-team]')) updateCount(); }});
+  document.addEventListener('change', e => {{ if (e.target.matches('[data-team]')) update(); }});
   function toggleAll(btn) {{
     const all = [...boxes()]; const anyUnchecked = all.some(b => !b.checked);
     all.forEach(b => b.checked = anyUnchecked);
-    btn.textContent = anyUnchecked ? 'Clear selection' : 'Select all teams';
-    updateCount();
+    btn.textContent = anyUnchecked ? 'Clear' : 'Select all';
+    update();
   }}
   function subscribeSelected(kind) {{
-    const sel = [...boxes()].filter(b => b.checked).map(b => b.closest('.card'));
+    const sel = [...boxes()].filter(b => b.checked);
     if (!sel.length) {{ alert('Pick at least one team first.'); return; }}
     if (sel.length > 5 && !confirm('This will open ' + sel.length + ' calendar subscriptions. Continue?')) return;
     const attr = kind === 'gcal' ? 'data-gcal' : 'data-webcal';
-    sel.forEach(card => {{
-      const url = card.getAttribute(attr);
-      window.open(url, '_blank');
-    }});
+    sel.forEach(b => window.open(b.getAttribute(attr), '_blank'));
   }}
   function copy(url, btn) {{
     navigator.clipboard.writeText(url).then(() => {{
