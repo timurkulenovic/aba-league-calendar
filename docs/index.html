@@ -24,15 +24,9 @@ h1 .grad {
 h2 { font-size: 1.1rem; margin: 0 0 12px; }
 .sub { color: var(--muted); font-size: 1.05rem; margin: 0 0 8px; }
 .hint { color: var(--muted); font-size: 0.9rem; margin: 0 0 20px; }
-.toolbar {
-  display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
-  margin-bottom: 20px; padding: 14px 16px; background: var(--card);
-  border: 1px solid var(--border); border-radius: 12px;
-}
-.toolbar .count { color: var(--muted); font-size: 0.9rem; margin-right: auto; }
 button, .btn {
-  border: 0; cursor: pointer; font-size: 0.88rem; font-weight: 600;
-  padding: 9px 14px; border-radius: 8px; transition: transform .08s, background .15s;
+  border: 0; cursor: pointer; font-size: 0.82rem; font-weight: 600;
+  padding: 7px 12px; border-radius: 8px; transition: transform .08s, background .15s;
 }
 button:active { transform: scale(0.97); }
 .btn-sub { background: var(--accent); color: #00121f; }
@@ -43,16 +37,10 @@ a.btn { text-decoration: none; text-align: center; display: inline-flex; align-i
 .teams { list-style: none; padding: 0; margin: 0 0 28px; }
 .teams li { border-bottom: 1px solid var(--border); }
 .teams li:first-child { border-top: 1px solid var(--border); }
-.teams label { display: flex; align-items: center; gap: 12px; padding: 12px 8px; cursor: pointer; font-size: 1rem; }
-.teams input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--accent); }
-.teams .meta { color: var(--muted); font-size: 0.8rem; margin-left: auto; }
-.selected { display: none; }
-.selected.show { display: block; }
-.sel-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 12px 8px; border-bottom: 1px solid var(--border); }
-.sel-row:first-child { border-top: 1px solid var(--border); }
-.sel-row .name { font-weight: 600; min-width: 140px; }
-.sel-row .links { display: flex; gap: 8px; margin-left: auto; }
-.sel-row .links > * { padding: 7px 12px; font-size: 0.82rem; }
+.teams .row { display: flex; align-items: center; gap: 12px; padding: 12px 8px; flex-wrap: wrap; }
+.teams .name { font-size: 1rem; font-weight: 600; }
+.teams .meta { color: var(--muted); font-size: 0.8rem; }
+.teams .links { display: flex; gap: 8px; margin-left: auto; }
 footer { margin-top: 40px; color: var(--muted); font-size: 0.82rem; text-align: center; }
 a { color: var(--accent); }
 code { background: #0b1120; padding: 1px 5px; border-radius: 4px; font-size: 0.85em; color: var(--accent); }
@@ -62,44 +50,32 @@ code { background: #0b1120; padding: 1px 5px; border-radius: 4px; font-size: 0.8
 <div class="wrap">
   <h1><span class="grad">ABA Liga</span> calendars</h1>
   <p class="sub">Subscribable iCalendar feeds for the 2026/27 ABA Liga season.</p>
-  <p class="hint">Check the teams you follow — subscribe links appear below for your selection. Pick <b>Google</b> or <b>Apple</b> to subscribe directly, or <b>Copy</b> the URL for any other calendar app.</p>
+  <p class="hint">Pick your teams and click <b>Google</b> or <b>Apple</b> to subscribe — your calendar app pulls updates automatically. Or <b>Copy</b> the URL for any other calendar app.</p>
   <p class="hint"><b>Google not working?</b> Google’s one-click is flaky. If it says “unable to open calendar”, open Google Calendar → Settings → Add calendar → From URL → paste the copied <code>https://…/*.ics</code> link. That always works.</p>
 
-  <div class="toolbar">
-    <span class="count" id="count">0 selected</span>
-    <button class="btn-sub" onclick="subscribeSelected('gcal')">Subscribe · Google</button>
-    <button class="btn-sub" onclick="subscribeSelected('webcal')">Subscribe · Apple</button>
-    <button class="btn-sec" onclick="toggleAll(this)">Select all</button>
-  </div>
-
   <ul class="teams" id="teams">
-      <li><label><input type="checkbox" data-team="__all__" data-name="All matches" data-webcal="webcal://kulenovic.si/aba-league-calendar/ics/all.ics" data-gcal="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fall.ics" data-ics="https://kulenovic.si/aba-league-calendar/ics/all.ics"> <span class="name">All matches</span><span class="meta">180 matches · every team</span></label></li>
-      <li><label><input type="checkbox" data-team="Borac Mozzart" data-name="Borac Mozzart" data-webcal="webcal://kulenovic.si/aba-league-calendar/ics/borac-mozzart.ics" data-gcal="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fborac-mozzart.ics" data-ics="https://kulenovic.si/aba-league-calendar/ics/borac-mozzart.ics"> <span class="name">Borac Mozzart</span><span class="meta">18 matches</span></label></li>
-      <li><label><input type="checkbox" data-team="Bosna BH Telecom" data-name="Bosna BH Telecom" data-webcal="webcal://kulenovic.si/aba-league-calendar/ics/bosna-bh-telecom.ics" data-gcal="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fbosna-bh-telecom.ics" data-ics="https://kulenovic.si/aba-league-calendar/ics/bosna-bh-telecom.ics"> <span class="name">Bosna BH Telecom</span><span class="meta">18 matches</span></label></li>
-      <li><label><input type="checkbox" data-team="Budućnost VOLI" data-name="Budućnost VOLI" data-webcal="webcal://kulenovic.si/aba-league-calendar/ics/budu-nost-voli.ics" data-gcal="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fbudu-nost-voli.ics" data-ics="https://kulenovic.si/aba-league-calendar/ics/budu-nost-voli.ics"> <span class="name">Budućnost VOLI</span><span class="meta">18 matches</span></label></li>
-      <li><label><input type="checkbox" data-team="Cedevita Olimpija" data-name="Cedevita Olimpija" data-webcal="webcal://kulenovic.si/aba-league-calendar/ics/cedevita-olimpija.ics" data-gcal="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fcedevita-olimpija.ics" data-ics="https://kulenovic.si/aba-league-calendar/ics/cedevita-olimpija.ics"> <span class="name">Cedevita Olimpija</span><span class="meta">18 matches</span></label></li>
-      <li><label><input type="checkbox" data-team="Cibona" data-name="Cibona" data-webcal="webcal://kulenovic.si/aba-league-calendar/ics/cibona.ics" data-gcal="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fcibona.ics" data-ics="https://kulenovic.si/aba-league-calendar/ics/cibona.ics"> <span class="name">Cibona</span><span class="meta">18 matches</span></label></li>
-      <li><label><input type="checkbox" data-team="Crvena zvezda Meridianbet" data-name="Crvena zvezda Meridianbet" data-webcal="webcal://kulenovic.si/aba-league-calendar/ics/crvena-zvezda-meridianbet.ics" data-gcal="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fcrvena-zvezda-meridianbet.ics" data-ics="https://kulenovic.si/aba-league-calendar/ics/crvena-zvezda-meridianbet.ics"> <span class="name">Crvena zvezda Meridianbet</span><span class="meta">18 matches</span></label></li>
-      <li><label><input type="checkbox" data-team="Dubai Basketball" data-name="Dubai Basketball" data-webcal="webcal://kulenovic.si/aba-league-calendar/ics/dubai-basketball.ics" data-gcal="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fdubai-basketball.ics" data-ics="https://kulenovic.si/aba-league-calendar/ics/dubai-basketball.ics"> <span class="name">Dubai Basketball</span><span class="meta">18 matches</span></label></li>
-      <li><label><input type="checkbox" data-team="FMP" data-name="FMP" data-webcal="webcal://kulenovic.si/aba-league-calendar/ics/fmp.ics" data-gcal="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Ffmp.ics" data-ics="https://kulenovic.si/aba-league-calendar/ics/fmp.ics"> <span class="name">FMP</span><span class="meta">18 matches</span></label></li>
-      <li><label><input type="checkbox" data-team="HKK Široki TT Kabeli" data-name="HKK Široki TT Kabeli" data-webcal="webcal://kulenovic.si/aba-league-calendar/ics/hkk-iroki-tt-kabeli.ics" data-gcal="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fhkk-iroki-tt-kabeli.ics" data-ics="https://kulenovic.si/aba-league-calendar/ics/hkk-iroki-tt-kabeli.ics"> <span class="name">HKK Široki TT Kabeli</span><span class="meta">18 matches</span></label></li>
-      <li><label><input type="checkbox" data-team="Igokea m:tel" data-name="Igokea m:tel" data-webcal="webcal://kulenovic.si/aba-league-calendar/ics/igokea-m-tel.ics" data-gcal="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Figokea-m-tel.ics" data-ics="https://kulenovic.si/aba-league-calendar/ics/igokea-m-tel.ics"> <span class="name">Igokea m:tel</span><span class="meta">18 matches</span></label></li>
-      <li><label><input type="checkbox" data-team="Krka" data-name="Krka" data-webcal="webcal://kulenovic.si/aba-league-calendar/ics/krka.ics" data-gcal="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fkrka.ics" data-ics="https://kulenovic.si/aba-league-calendar/ics/krka.ics"> <span class="name">Krka</span><span class="meta">18 matches</span></label></li>
-      <li><label><input type="checkbox" data-team="Mega Superbet" data-name="Mega Superbet" data-webcal="webcal://kulenovic.si/aba-league-calendar/ics/mega-superbet.ics" data-gcal="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fmega-superbet.ics" data-ics="https://kulenovic.si/aba-league-calendar/ics/mega-superbet.ics"> <span class="name">Mega Superbet</span><span class="meta">18 matches</span></label></li>
-      <li><label><input type="checkbox" data-team="Partizan Mozzart Bet" data-name="Partizan Mozzart Bet" data-webcal="webcal://kulenovic.si/aba-league-calendar/ics/partizan-mozzart-bet.ics" data-gcal="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fpartizan-mozzart-bet.ics" data-ics="https://kulenovic.si/aba-league-calendar/ics/partizan-mozzart-bet.ics"> <span class="name">Partizan Mozzart Bet</span><span class="meta">18 matches</span></label></li>
-      <li><label><input type="checkbox" data-team="Perspektiva Ilirija" data-name="Perspektiva Ilirija" data-webcal="webcal://kulenovic.si/aba-league-calendar/ics/perspektiva-ilirija.ics" data-gcal="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fperspektiva-ilirija.ics" data-ics="https://kulenovic.si/aba-league-calendar/ics/perspektiva-ilirija.ics"> <span class="name">Perspektiva Ilirija</span><span class="meta">18 matches</span></label></li>
-      <li><label><input type="checkbox" data-team="SC Derby" data-name="SC Derby" data-webcal="webcal://kulenovic.si/aba-league-calendar/ics/sc-derby.ics" data-gcal="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fsc-derby.ics" data-ics="https://kulenovic.si/aba-league-calendar/ics/sc-derby.ics"> <span class="name">SC Derby</span><span class="meta">18 matches</span></label></li>
-      <li><label><input type="checkbox" data-team="Slovan Bratislava" data-name="Slovan Bratislava" data-webcal="webcal://kulenovic.si/aba-league-calendar/ics/slovan-bratislava.ics" data-gcal="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fslovan-bratislava.ics" data-ics="https://kulenovic.si/aba-league-calendar/ics/slovan-bratislava.ics"> <span class="name">Slovan Bratislava</span><span class="meta">18 matches</span></label></li>
-      <li><label><input type="checkbox" data-team="Spartak Office Shoes" data-name="Spartak Office Shoes" data-webcal="webcal://kulenovic.si/aba-league-calendar/ics/spartak-office-shoes.ics" data-gcal="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fspartak-office-shoes.ics" data-ics="https://kulenovic.si/aba-league-calendar/ics/spartak-office-shoes.ics"> <span class="name">Spartak Office Shoes</span><span class="meta">18 matches</span></label></li>
-      <li><label><input type="checkbox" data-team="U-BT Cluj-Napoca" data-name="U-BT Cluj-Napoca" data-webcal="webcal://kulenovic.si/aba-league-calendar/ics/u-bt-cluj-napoca.ics" data-gcal="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fu-bt-cluj-napoca.ics" data-ics="https://kulenovic.si/aba-league-calendar/ics/u-bt-cluj-napoca.ics"> <span class="name">U-BT Cluj-Napoca</span><span class="meta">18 matches</span></label></li>
-      <li><label><input type="checkbox" data-team="Vienna" data-name="Vienna" data-webcal="webcal://kulenovic.si/aba-league-calendar/ics/vienna.ics" data-gcal="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fvienna.ics" data-ics="https://kulenovic.si/aba-league-calendar/ics/vienna.ics"> <span class="name">Vienna</span><span class="meta">18 matches</span></label></li>
-      <li><label><input type="checkbox" data-team="Zadar" data-name="Zadar" data-webcal="webcal://kulenovic.si/aba-league-calendar/ics/zadar.ics" data-gcal="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fzadar.ics" data-ics="https://kulenovic.si/aba-league-calendar/ics/zadar.ics"> <span class="name">Zadar</span><span class="meta">18 matches</span></label></li>
+      <li><div class="row"><span class="name">All matches</span><span class="meta">180 matches · every team</span><span class="links"><a class="btn btn-sub" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fall.ics" target="_blank" rel="noopener">Google</a><a class="btn btn-sub" href="webcal://kulenovic.si/aba-league-calendar/ics/all.ics">Apple</a><button class="btn-sec" onclick="copy('https://kulenovic.si/aba-league-calendar/ics/all.ics', this)">Copy</button></span></div></li>
+      <li><div class="row"><span class="name">Borac Mozzart</span><span class="meta">18 matches</span><span class="links"><a class="btn btn-sub" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fborac-mozzart.ics" target="_blank" rel="noopener">Google</a><a class="btn btn-sub" href="webcal://kulenovic.si/aba-league-calendar/ics/borac-mozzart.ics">Apple</a><button class="btn-sec" onclick="copy('https://kulenovic.si/aba-league-calendar/ics/borac-mozzart.ics', this)">Copy</button></span></div></li>
+      <li><div class="row"><span class="name">Bosna BH Telecom</span><span class="meta">18 matches</span><span class="links"><a class="btn btn-sub" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fbosna-bh-telecom.ics" target="_blank" rel="noopener">Google</a><a class="btn btn-sub" href="webcal://kulenovic.si/aba-league-calendar/ics/bosna-bh-telecom.ics">Apple</a><button class="btn-sec" onclick="copy('https://kulenovic.si/aba-league-calendar/ics/bosna-bh-telecom.ics', this)">Copy</button></span></div></li>
+      <li><div class="row"><span class="name">Budućnost VOLI</span><span class="meta">18 matches</span><span class="links"><a class="btn btn-sub" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fbudu-nost-voli.ics" target="_blank" rel="noopener">Google</a><a class="btn btn-sub" href="webcal://kulenovic.si/aba-league-calendar/ics/budu-nost-voli.ics">Apple</a><button class="btn-sec" onclick="copy('https://kulenovic.si/aba-league-calendar/ics/budu-nost-voli.ics', this)">Copy</button></span></div></li>
+      <li><div class="row"><span class="name">Cedevita Olimpija</span><span class="meta">18 matches</span><span class="links"><a class="btn btn-sub" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fcedevita-olimpija.ics" target="_blank" rel="noopener">Google</a><a class="btn btn-sub" href="webcal://kulenovic.si/aba-league-calendar/ics/cedevita-olimpija.ics">Apple</a><button class="btn-sec" onclick="copy('https://kulenovic.si/aba-league-calendar/ics/cedevita-olimpija.ics', this)">Copy</button></span></div></li>
+      <li><div class="row"><span class="name">Cibona</span><span class="meta">18 matches</span><span class="links"><a class="btn btn-sub" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fcibona.ics" target="_blank" rel="noopener">Google</a><a class="btn btn-sub" href="webcal://kulenovic.si/aba-league-calendar/ics/cibona.ics">Apple</a><button class="btn-sec" onclick="copy('https://kulenovic.si/aba-league-calendar/ics/cibona.ics', this)">Copy</button></span></div></li>
+      <li><div class="row"><span class="name">Crvena zvezda Meridianbet</span><span class="meta">18 matches</span><span class="links"><a class="btn btn-sub" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fcrvena-zvezda-meridianbet.ics" target="_blank" rel="noopener">Google</a><a class="btn btn-sub" href="webcal://kulenovic.si/aba-league-calendar/ics/crvena-zvezda-meridianbet.ics">Apple</a><button class="btn-sec" onclick="copy('https://kulenovic.si/aba-league-calendar/ics/crvena-zvezda-meridianbet.ics', this)">Copy</button></span></div></li>
+      <li><div class="row"><span class="name">Dubai Basketball</span><span class="meta">18 matches</span><span class="links"><a class="btn btn-sub" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fdubai-basketball.ics" target="_blank" rel="noopener">Google</a><a class="btn btn-sub" href="webcal://kulenovic.si/aba-league-calendar/ics/dubai-basketball.ics">Apple</a><button class="btn-sec" onclick="copy('https://kulenovic.si/aba-league-calendar/ics/dubai-basketball.ics', this)">Copy</button></span></div></li>
+      <li><div class="row"><span class="name">FMP</span><span class="meta">18 matches</span><span class="links"><a class="btn btn-sub" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Ffmp.ics" target="_blank" rel="noopener">Google</a><a class="btn btn-sub" href="webcal://kulenovic.si/aba-league-calendar/ics/fmp.ics">Apple</a><button class="btn-sec" onclick="copy('https://kulenovic.si/aba-league-calendar/ics/fmp.ics', this)">Copy</button></span></div></li>
+      <li><div class="row"><span class="name">HKK Široki TT Kabeli</span><span class="meta">18 matches</span><span class="links"><a class="btn btn-sub" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fhkk-iroki-tt-kabeli.ics" target="_blank" rel="noopener">Google</a><a class="btn btn-sub" href="webcal://kulenovic.si/aba-league-calendar/ics/hkk-iroki-tt-kabeli.ics">Apple</a><button class="btn-sec" onclick="copy('https://kulenovic.si/aba-league-calendar/ics/hkk-iroki-tt-kabeli.ics', this)">Copy</button></span></div></li>
+      <li><div class="row"><span class="name">Igokea m:tel</span><span class="meta">18 matches</span><span class="links"><a class="btn btn-sub" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Figokea-m-tel.ics" target="_blank" rel="noopener">Google</a><a class="btn btn-sub" href="webcal://kulenovic.si/aba-league-calendar/ics/igokea-m-tel.ics">Apple</a><button class="btn-sec" onclick="copy('https://kulenovic.si/aba-league-calendar/ics/igokea-m-tel.ics', this)">Copy</button></span></div></li>
+      <li><div class="row"><span class="name">Krka</span><span class="meta">18 matches</span><span class="links"><a class="btn btn-sub" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fkrka.ics" target="_blank" rel="noopener">Google</a><a class="btn btn-sub" href="webcal://kulenovic.si/aba-league-calendar/ics/krka.ics">Apple</a><button class="btn-sec" onclick="copy('https://kulenovic.si/aba-league-calendar/ics/krka.ics', this)">Copy</button></span></div></li>
+      <li><div class="row"><span class="name">Mega Superbet</span><span class="meta">18 matches</span><span class="links"><a class="btn btn-sub" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fmega-superbet.ics" target="_blank" rel="noopener">Google</a><a class="btn btn-sub" href="webcal://kulenovic.si/aba-league-calendar/ics/mega-superbet.ics">Apple</a><button class="btn-sec" onclick="copy('https://kulenovic.si/aba-league-calendar/ics/mega-superbet.ics', this)">Copy</button></span></div></li>
+      <li><div class="row"><span class="name">Partizan Mozzart Bet</span><span class="meta">18 matches</span><span class="links"><a class="btn btn-sub" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fpartizan-mozzart-bet.ics" target="_blank" rel="noopener">Google</a><a class="btn btn-sub" href="webcal://kulenovic.si/aba-league-calendar/ics/partizan-mozzart-bet.ics">Apple</a><button class="btn-sec" onclick="copy('https://kulenovic.si/aba-league-calendar/ics/partizan-mozzart-bet.ics', this)">Copy</button></span></div></li>
+      <li><div class="row"><span class="name">Perspektiva Ilirija</span><span class="meta">18 matches</span><span class="links"><a class="btn btn-sub" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fperspektiva-ilirija.ics" target="_blank" rel="noopener">Google</a><a class="btn btn-sub" href="webcal://kulenovic.si/aba-league-calendar/ics/perspektiva-ilirija.ics">Apple</a><button class="btn-sec" onclick="copy('https://kulenovic.si/aba-league-calendar/ics/perspektiva-ilirija.ics', this)">Copy</button></span></div></li>
+      <li><div class="row"><span class="name">SC Derby</span><span class="meta">18 matches</span><span class="links"><a class="btn btn-sub" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fsc-derby.ics" target="_blank" rel="noopener">Google</a><a class="btn btn-sub" href="webcal://kulenovic.si/aba-league-calendar/ics/sc-derby.ics">Apple</a><button class="btn-sec" onclick="copy('https://kulenovic.si/aba-league-calendar/ics/sc-derby.ics', this)">Copy</button></span></div></li>
+      <li><div class="row"><span class="name">Slovan Bratislava</span><span class="meta">18 matches</span><span class="links"><a class="btn btn-sub" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fslovan-bratislava.ics" target="_blank" rel="noopener">Google</a><a class="btn btn-sub" href="webcal://kulenovic.si/aba-league-calendar/ics/slovan-bratislava.ics">Apple</a><button class="btn-sec" onclick="copy('https://kulenovic.si/aba-league-calendar/ics/slovan-bratislava.ics', this)">Copy</button></span></div></li>
+      <li><div class="row"><span class="name">Spartak Office Shoes</span><span class="meta">18 matches</span><span class="links"><a class="btn btn-sub" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fspartak-office-shoes.ics" target="_blank" rel="noopener">Google</a><a class="btn btn-sub" href="webcal://kulenovic.si/aba-league-calendar/ics/spartak-office-shoes.ics">Apple</a><button class="btn-sec" onclick="copy('https://kulenovic.si/aba-league-calendar/ics/spartak-office-shoes.ics', this)">Copy</button></span></div></li>
+      <li><div class="row"><span class="name">U-BT Cluj-Napoca</span><span class="meta">18 matches</span><span class="links"><a class="btn btn-sub" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fu-bt-cluj-napoca.ics" target="_blank" rel="noopener">Google</a><a class="btn btn-sub" href="webcal://kulenovic.si/aba-league-calendar/ics/u-bt-cluj-napoca.ics">Apple</a><button class="btn-sec" onclick="copy('https://kulenovic.si/aba-league-calendar/ics/u-bt-cluj-napoca.ics', this)">Copy</button></span></div></li>
+      <li><div class="row"><span class="name">Vienna</span><span class="meta">18 matches</span><span class="links"><a class="btn btn-sub" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fvienna.ics" target="_blank" rel="noopener">Google</a><a class="btn btn-sub" href="webcal://kulenovic.si/aba-league-calendar/ics/vienna.ics">Apple</a><button class="btn-sec" onclick="copy('https://kulenovic.si/aba-league-calendar/ics/vienna.ics', this)">Copy</button></span></div></li>
+      <li><div class="row"><span class="name">Zadar</span><span class="meta">18 matches</span><span class="links"><a class="btn btn-sub" href="https://calendar.google.com/calendar/render?cid=webcal%3A%2F%2Fkulenovic.si%2Faba-league-calendar%2Fics%2Fzadar.ics" target="_blank" rel="noopener">Google</a><a class="btn btn-sub" href="webcal://kulenovic.si/aba-league-calendar/ics/zadar.ics">Apple</a><button class="btn-sec" onclick="copy('https://kulenovic.si/aba-league-calendar/ics/zadar.ics', this)">Copy</button></span></div></li>
   </ul>
-
-  <div class="selected" id="selected">
-    <h2>Selected calendars</h2>
-    <div id="selected-list"></div>
-  </div>
 
   <footer>
     Feeds are regenerated daily by a GitHub Action scraping
@@ -108,69 +84,6 @@ code { background: #0b1120; padding: 1px 5px; border-radius: 4px; font-size: 0.8
   </footer>
 </div>
 <script>
-  const boxes = () => document.querySelectorAll('input[type=checkbox][data-team]');
-  function update() {
-    const checked = [...boxes()].filter(b => b.checked);
-    document.getElementById('count').textContent = checked.length + ' selected';
-    const panel = document.getElementById('selected');
-    const list = document.getElementById('selected-list');
-    list.innerHTML = '';
-    if (!checked.length) { panel.classList.remove('show'); return; }
-    panel.classList.add('show');
-    checked.forEach(b => {
-      const name = b.getAttribute('data-name');
-      const wc = b.getAttribute('data-webcal');
-      const gc = b.getAttribute('data-gcal');
-      const ic = b.getAttribute('data-ics');
-      const row = document.createElement('div');
-      row.className = 'sel-row';
-      row.innerHTML =
-        '<span class="name">' + name + '</span>' +
-        '<span class="links">' +
-          '<a class="btn btn-sub" href="' + gc + '" target="_blank" rel="noopener">Google</a>' +
-          '<a class="btn btn-sub" href="' + wc + '">Apple</a>' +
-          '<button class="btn-sec" onclick="copy(\'' + ic + '\', this)">Copy</button>' +
-        '</span>';
-      list.appendChild(row);
-    });
-  }
-  document.addEventListener('change', e => { if (e.target.matches('[data-team]')) update(); });
-  function toggleAll(btn) {
-    const all = [...boxes()]; const anyUnchecked = all.some(b => !b.checked);
-    all.forEach(b => b.checked = anyUnchecked);
-    btn.textContent = anyUnchecked ? 'Clear' : 'Select all';
-    update();
-  }
-  function subscribeSelected(kind) {
-    const sel = [...boxes()].filter(b => b.checked);
-    if (!sel.length) { alert('Pick at least one team first.'); return; }
-    const attr = kind === 'gcal' ? 'data-gcal' : 'data-webcal';
-    const which = kind === 'gcal' ? 'Google Calendar' : 'Apple Calendar';
-    const items = sel.map(b => {
-      const name = b.getAttribute('data-name');
-      const url = b.getAttribute(attr);
-      const ext = kind === 'gcal' ? ' target="_blank" rel="noopener"' : '';
-      return '<li><a href="' + url + '"' + ext + '>' + name + '</a></li>';
-    }).join('');
-    const page =
-      '<!doctype html><html><head><meta charset="utf-8">' +
-      '<meta name="viewport" content="width=device-width,initial-scale=1">' +
-      '<title>Subscribe — ABA Liga</title>' +
-      '<style>body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;max-width:560px;' +
-      'margin:48px auto;padding:0 20px;color:#0f172a;background:#f8fafc}' +
-      'h1{font-size:1.5rem;margin:0 0 8px}' +
-      'p{color:#64748b;margin:0 0 20px}' +
-      'ol{padding-left:20px;line-height:2.2}' +
-      'a{color:#0284c7;font-weight:600;text-decoration:none;font-size:1.1rem}' +
-      'a:hover{text-decoration:underline}' +
-      '</style></head><body>' +
-      '<h1>Subscribe to ' + sel.length + ' calendar' + (sel.length > 1 ? 's' : '') + '</h1>' +
-      '<p>Click each link to add it to ' + which + ':</p>' +
-      '<ol>' + items + '</ol>' +
-      '</body></html>';
-    const blob = new Blob([page], {type: 'text/html'});
-    window.open(URL.createObjectURL(blob), '_blank');
-  }
   function copy(url, btn) {
     navigator.clipboard.writeText(url).then(() => {
       const t = btn.textContent; btn.textContent = 'Copied!';

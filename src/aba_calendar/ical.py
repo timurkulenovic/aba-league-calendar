@@ -166,15 +166,9 @@ h1 .grad {
 h2 { font-size: 1.1rem; margin: 0 0 12px; }
 .sub { color: var(--muted); font-size: 1.05rem; margin: 0 0 8px; }
 .hint { color: var(--muted); font-size: 0.9rem; margin: 0 0 20px; }
-.toolbar {
-  display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
-  margin-bottom: 20px; padding: 14px 16px; background: var(--card);
-  border: 1px solid var(--border); border-radius: 12px;
-}
-.toolbar .count { color: var(--muted); font-size: 0.9rem; margin-right: auto; }
 button, .btn {
-  border: 0; cursor: pointer; font-size: 0.88rem; font-weight: 600;
-  padding: 9px 14px; border-radius: 8px; transition: transform .08s, background .15s;
+  border: 0; cursor: pointer; font-size: 0.82rem; font-weight: 600;
+  padding: 7px 12px; border-radius: 8px; transition: transform .08s, background .15s;
 }
 button:active { transform: scale(0.97); }
 .btn-sub { background: var(--accent); color: #00121f; }
@@ -185,16 +179,10 @@ a.btn { text-decoration: none; text-align: center; display: inline-flex; align-i
 .teams { list-style: none; padding: 0; margin: 0 0 28px; }
 .teams li { border-bottom: 1px solid var(--border); }
 .teams li:first-child { border-top: 1px solid var(--border); }
-.teams label { display: flex; align-items: center; gap: 12px; padding: 12px 8px; cursor: pointer; font-size: 1rem; }
-.teams input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--accent); }
-.teams .meta { color: var(--muted); font-size: 0.8rem; margin-left: auto; }
-.selected { display: none; }
-.selected.show { display: block; }
-.sel-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 12px 8px; border-bottom: 1px solid var(--border); }
-.sel-row:first-child { border-top: 1px solid var(--border); }
-.sel-row .name { font-weight: 600; min-width: 140px; }
-.sel-row .links { display: flex; gap: 8px; margin-left: auto; }
-.sel-row .links > * { padding: 7px 12px; font-size: 0.82rem; }
+.teams .row { display: flex; align-items: center; gap: 12px; padding: 12px 8px; flex-wrap: wrap; }
+.teams .name { font-size: 1rem; font-weight: 600; }
+.teams .meta { color: var(--muted); font-size: 0.8rem; }
+.teams .links { display: flex; gap: 8px; margin-left: auto; }
 footer { margin-top: 40px; color: var(--muted); font-size: 0.82rem; text-align: center; }
 a { color: var(--accent); }
 code { background: #0b1120; padding: 1px 5px; border-radius: 4px; font-size: 0.85em; color: var(--accent); }
@@ -242,14 +230,16 @@ def render_index(
 
     def list_item(e: dict, is_all: bool = False) -> str:
         name = html.escape(e["name"])
-        label = "__all__" if is_all else name
         meta = f"{e['n']} matches" + (" · every team" if is_all else "")
         return (
-            f'      <li><label><input type="checkbox" data-team="{label}" '
-            f'data-name="{name}" data-webcal="{e["webcal"]}" '
-            f'data-gcal="{e["gcal"]}" data-ics="{e["ics"]}"> '
+            f'      <li><div class="row">'
             f'<span class="name">{name}</span>'
-            f'<span class="meta">{meta}</span></label></li>'
+            f'<span class="meta">{meta}</span>'
+            f'<span class="links">'
+            f'<a class="btn btn-sub" href="{e["gcal"]}" target="_blank" rel="noopener">Google</a>'
+            f'<a class="btn btn-sub" href="{e["webcal"]}">Apple</a>'
+            f'<button class="btn-sec" onclick="copy(\'{e["ics"]}\', this)">Copy</button>'
+            f'</span></div></li>'
         )
 
     teams_html = "\n".join(
@@ -268,24 +258,12 @@ def render_index(
 <div class="wrap">
   <h1><span class="grad">ABA Liga</span> calendars</h1>
   <p class="sub">Subscribable iCalendar feeds for the 2026/27 ABA Liga season.</p>
-  <p class="hint">Check the teams you follow — subscribe links appear below for your selection. Pick <b>Google</b> or <b>Apple</b> to subscribe directly, or <b>Copy</b> the URL for any other calendar app.</p>
+  <p class="hint">Pick your teams and click <b>Google</b> or <b>Apple</b> to subscribe — your calendar app pulls updates automatically. Or <b>Copy</b> the URL for any other calendar app.</p>
   <p class="hint"><b>Google not working?</b> Google’s one-click is flaky. If it says “unable to open calendar”, open Google Calendar → Settings → Add calendar → From URL → paste the copied <code>https://…/*.ics</code> link. That always works.</p>
-
-  <div class="toolbar">
-    <span class="count" id="count">0 selected</span>
-    <button class="btn-sub" onclick="subscribeSelected('gcal')">Subscribe · Google</button>
-    <button class="btn-sub" onclick="subscribeSelected('webcal')">Subscribe · Apple</button>
-    <button class="btn-sec" onclick="toggleAll(this)">Select all</button>
-  </div>
 
   <ul class="teams" id="teams">
 {teams_html}
   </ul>
-
-  <div class="selected" id="selected">
-    <h2>Selected calendars</h2>
-    <div id="selected-list"></div>
-  </div>
 
   <footer>
     Feeds are regenerated daily by a GitHub Action scraping
@@ -294,69 +272,6 @@ def render_index(
   </footer>
 </div>
 <script>
-  const boxes = () => document.querySelectorAll('input[type=checkbox][data-team]');
-  function update() {{
-    const checked = [...boxes()].filter(b => b.checked);
-    document.getElementById('count').textContent = checked.length + ' selected';
-    const panel = document.getElementById('selected');
-    const list = document.getElementById('selected-list');
-    list.innerHTML = '';
-    if (!checked.length) {{ panel.classList.remove('show'); return; }}
-    panel.classList.add('show');
-    checked.forEach(b => {{
-      const name = b.getAttribute('data-name');
-      const wc = b.getAttribute('data-webcal');
-      const gc = b.getAttribute('data-gcal');
-      const ic = b.getAttribute('data-ics');
-      const row = document.createElement('div');
-      row.className = 'sel-row';
-      row.innerHTML =
-        '<span class="name">' + name + '</span>' +
-        '<span class="links">' +
-          '<a class="btn btn-sub" href="' + gc + '" target="_blank" rel="noopener">Google</a>' +
-          '<a class="btn btn-sub" href="' + wc + '">Apple</a>' +
-          '<button class="btn-sec" onclick="copy(\\'' + ic + '\\', this)">Copy</button>' +
-        '</span>';
-      list.appendChild(row);
-    }});
-  }}
-  document.addEventListener('change', e => {{ if (e.target.matches('[data-team]')) update(); }});
-  function toggleAll(btn) {{
-    const all = [...boxes()]; const anyUnchecked = all.some(b => !b.checked);
-    all.forEach(b => b.checked = anyUnchecked);
-    btn.textContent = anyUnchecked ? 'Clear' : 'Select all';
-    update();
-  }}
-  function subscribeSelected(kind) {{
-    const sel = [...boxes()].filter(b => b.checked);
-    if (!sel.length) {{ alert('Pick at least one team first.'); return; }}
-    const attr = kind === 'gcal' ? 'data-gcal' : 'data-webcal';
-    const which = kind === 'gcal' ? 'Google Calendar' : 'Apple Calendar';
-    const items = sel.map(b => {{
-      const name = b.getAttribute('data-name');
-      const url = b.getAttribute(attr);
-      const ext = kind === 'gcal' ? ' target="_blank" rel="noopener"' : '';
-      return '<li><a href="' + url + '"' + ext + '>' + name + '</a></li>';
-    }}).join('');
-    const page =
-      '<!doctype html><html><head><meta charset="utf-8">' +
-      '<meta name="viewport" content="width=device-width,initial-scale=1">' +
-      '<title>Subscribe — ABA Liga</title>' +
-      '<style>body{{font-family:-apple-system,BlinkMacSystemFont,sans-serif;max-width:560px;' +
-      'margin:48px auto;padding:0 20px;color:#0f172a;background:#f8fafc}}' +
-      'h1{{font-size:1.5rem;margin:0 0 8px}}' +
-      'p{{color:#64748b;margin:0 0 20px}}' +
-      'ol{{padding-left:20px;line-height:2.2}}' +
-      'a{{color:#0284c7;font-weight:600;text-decoration:none;font-size:1.1rem}}' +
-      'a:hover{{text-decoration:underline}}' +
-      '</style></head><body>' +
-      '<h1>Subscribe to ' + sel.length + ' calendar' + (sel.length > 1 ? 's' : '') + '</h1>' +
-      '<p>Click each link to add it to ' + which + ':</p>' +
-      '<ol>' + items + '</ol>' +
-      '</body></html>';
-    const blob = new Blob([page], {{type: 'text/html'}});
-    window.open(URL.createObjectURL(blob), '_blank');
-  }}
   function copy(url, btn) {{
     navigator.clipboard.writeText(url).then(() => {{
       const t = btn.textContent; btn.textContent = 'Copied!';
