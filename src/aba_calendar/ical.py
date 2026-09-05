@@ -199,12 +199,12 @@ a { color: var(--accent); }
 
 def _team_card(team: str, ics_url: str, webcal_url: str, gcal_url: str, n: int) -> str:
     name = html.escape(team)
-    return f"""      <div class="card" data-team="{html.escape(slugify(team))}" data-webcal="{webcal_url}">
+    return f"""      <div class="card" data-team="{html.escape(slugify(team))}" data-webcal="{webcal_url}" data-gcal="{gcal_url}">
         <label><input type="checkbox" data-team="{name}"> <span class="name">{name}</span></label>
         <div class="meta">{n} matches</div>
         <div class="row">
+          <a class="btn btn-sub" href="{gcal_url}" target="_blank" rel="noopener">Google</a>
           <a class="btn btn-sub" href="{webcal_url}">Apple</a>
-          <a class="btn btn-sec" href="{gcal_url}" target="_blank" rel="noopener">Google</a>
           <button class="btn-sec" onclick="copy('{ics_url}', this)">Copy</button>
         </div>
       </div>"""
@@ -234,12 +234,12 @@ def render_index(
     all_gcal = gcal("all")
 
     cards = [
-        f"""      <div class="card all-card" data-team="__all__" data-webcal="{all_webcal}">
+        f"""      <div class="card all-card" data-team="__all__" data-webcal="{all_webcal}" data-gcal="{all_gcal}">
         <label><input type="checkbox" data-team="__all__"> <span class="name">All matches</span></label>
         <div class="meta">{all_count} matches · every team</div>
         <div class="row">
+          <a class="btn btn-sub" href="{all_gcal}" target="_blank" rel="noopener">Google</a>
           <a class="btn btn-sub" href="{all_webcal}">Apple</a>
-          <a class="btn btn-sec" href="{all_gcal}" target="_blank" rel="noopener">Google</a>
           <button class="btn-sec" onclick="copy('{all_ics}', this)">Copy</button>
         </div>
       </div>"""
@@ -262,11 +262,12 @@ def render_index(
 <div class="wrap">
   <h1><span class="grad">ABA Liga</span> calendars</h1>
   <p class="sub">Subscribable iCalendar feeds for the 2026/27 ABA Liga season.</p>
-  <p class="hint">Pick the teams you care about and subscribe to each feed once — your calendar app pulls updates automatically. Apple Calendar uses the <b>Apple</b> button; Google Calendar uses <b>Google</b>; anything else, <b>Copy</b> the URL and add it via “subscribe from URL”.</p>
+  <p class="hint">Pick the teams you care about and subscribe to each feed once — your calendar app pulls updates automatically. Use <b>Google</b> or <b>Apple</b> to subscribe directly, or <b>Copy</b> the URL and add it via “subscribe from URL” in any other calendar app.</p>
 
   <div class="toolbar">
     <span class="count" id="count">0 selected</span>
-    <button class="btn-sub" onclick="subscribeSelected()">Subscribe selected (Apple)</button>
+    <button class="btn-sub" onclick="subscribeSelected('gcal')">Subscribe selected · Google</button>
+    <button class="btn-sub" onclick="subscribeSelected('webcal')">Subscribe selected · Apple</button>
     <button class="btn-sec" onclick="toggleAll(this)">Select all teams</button>
   </div>
 
@@ -293,12 +294,13 @@ def render_index(
     btn.textContent = anyUnchecked ? 'Clear selection' : 'Select all teams';
     updateCount();
   }}
-  function subscribeSelected() {{
+  function subscribeSelected(kind) {{
     const sel = [...boxes()].filter(b => b.checked).map(b => b.closest('.card'));
     if (!sel.length) {{ alert('Pick at least one team first.'); return; }}
     if (sel.length > 5 && !confirm('This will open ' + sel.length + ' calendar subscriptions. Continue?')) return;
+    const attr = kind === 'gcal' ? 'data-gcal' : 'data-webcal';
     sel.forEach(card => {{
-      const url = card.getAttribute('data-webcal');
+      const url = card.getAttribute(attr);
       window.open(url, '_blank');
     }});
   }}
