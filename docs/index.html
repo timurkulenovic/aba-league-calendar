@@ -144,9 +144,32 @@ code { background: #0b1120; padding: 1px 5px; border-radius: 4px; font-size: 0.8
   function subscribeSelected(kind) {
     const sel = [...boxes()].filter(b => b.checked);
     if (!sel.length) { alert('Pick at least one team first.'); return; }
-    if (sel.length > 5 && !confirm('This will open ' + sel.length + ' calendar subscriptions. Continue?')) return;
     const attr = kind === 'gcal' ? 'data-gcal' : 'data-webcal';
-    sel.forEach(b => window.open(b.getAttribute(attr), '_blank'));
+    const which = kind === 'gcal' ? 'Google Calendar' : 'Apple Calendar';
+    const items = sel.map(b => {
+      const name = b.getAttribute('data-name');
+      const url = b.getAttribute(attr);
+      const ext = kind === 'gcal' ? ' target="_blank" rel="noopener"' : '';
+      return '<li><a href="' + url + '"' + ext + '>' + name + '</a></li>';
+    }).join('');
+    const page =
+      '<!doctype html><html><head><meta charset="utf-8">' +
+      '<meta name="viewport" content="width=device-width,initial-scale=1">' +
+      '<title>Subscribe — ABA Liga</title>' +
+      '<style>body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;max-width:560px;' +
+      'margin:48px auto;padding:0 20px;color:#0f172a;background:#f8fafc}' +
+      'h1{font-size:1.5rem;margin:0 0 8px}' +
+      'p{color:#64748b;margin:0 0 20px}' +
+      'ol{padding-left:20px;line-height:2.2}' +
+      'a{color:#0284c7;font-weight:600;text-decoration:none;font-size:1.1rem}' +
+      'a:hover{text-decoration:underline}' +
+      '</style></head><body>' +
+      '<h1>Subscribe to ' + sel.length + ' calendar' + (sel.length > 1 ? 's' : '') + '</h1>' +
+      '<p>Click each link to add it to ' + which + ':</p>' +
+      '<ol>' + items + '</ol>' +
+      '</body></html>';
+    const blob = new Blob([page], {type: 'text/html'});
+    window.open(URL.createObjectURL(blob), '_blank');
   }
   function copy(url, btn) {
     navigator.clipboard.writeText(url).then(() => {
