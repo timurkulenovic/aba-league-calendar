@@ -11,6 +11,7 @@ import html
 import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from urllib.parse import quote
 from zoneinfo import ZoneInfo
 
 from aba_calendar.scrape import Match
@@ -227,7 +228,7 @@ def render_index(
         return ics_path(slug).replace("https://", "webcal://").replace("http://", "webcal://")
 
     def gcal(slug: str) -> str:
-        return f"https://calendar.google.com/calendar/render?cid={ics_path(slug)}"
+        return f"https://calendar.google.com/calendar/render?cid={quote(ics_path(slug), safe='')}"
 
     all_ics = ics_path("all")
     all_webcal = webcal("all")
