@@ -195,6 +195,7 @@ a.btn { text-decoration: none; text-align: center; display: inline-flex; align-i
 .all-card { border-color: var(--accent); }
 footer { margin-top: 40px; color: var(--muted); font-size: 0.82rem; text-align: center; }
 a { color: var(--accent); }
+code { background: #0b1120; padding: 1px 5px; border-radius: 4px; font-size: 0.85em; color: var(--accent); }
 """
 
 
@@ -228,7 +229,9 @@ def render_index(
         return ics_path(slug).replace("https://", "webcal://").replace("http://", "webcal://")
 
     def gcal(slug: str) -> str:
-        return f"https://calendar.google.com/calendar/render?cid={quote(ics_path(slug), safe='')}"
+        # Google Calendar's cid= endpoint rejects https:// URLs but accepts
+        # webcal:// (URL-encoded) — it signals "subscribe to external feed".
+        return f"https://calendar.google.com/calendar/render?cid={quote(webcal(slug), safe='')}"
 
     all_ics = ics_path("all")
     all_webcal = webcal("all")
@@ -264,6 +267,7 @@ def render_index(
   <h1><span class="grad">ABA Liga</span> calendars</h1>
   <p class="sub">Subscribable iCalendar feeds for the 2026/27 ABA Liga season.</p>
   <p class="hint">Pick the teams you care about and subscribe to each feed once — your calendar app pulls updates automatically. Use <b>Google</b> or <b>Apple</b> to subscribe directly, or <b>Copy</b> the URL and add it via “subscribe from URL” in any other calendar app.</p>
+  <p class="hint"><b>Google not working?</b> Google’s one-click is flaky. If it says “unable to open calendar”, open Google Calendar → Settings → Add calendar → From URL → paste the copied <code>https://…/*.ics</code> link. That always works.</p>
 
   <div class="toolbar">
     <span class="count" id="count">0 selected</span>
