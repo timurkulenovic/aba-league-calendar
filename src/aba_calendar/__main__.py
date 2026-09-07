@@ -42,7 +42,7 @@ def main(argv: list[str] | None = None) -> int:
     all_parser.add_argument("--teams", help="Comma-separated team name filters")
 
     ics_parser = sub.add_parser(
-        "ics", help="Generate subscribable .ics feeds + index.html into the Pages dir"
+        "ics", help="Generate subscribable .ics feeds into the Pages dir"
     )
     ics_parser.add_argument(
         "--csv",
@@ -120,7 +120,6 @@ def cmd_ics(config: Config, csv_path: Path) -> int:
         f"Wrote {result['teams']} team feeds + all.ics ({result['matches']} matches) "
         f"to {config.ics_output_dir / config.ics_subdir}"
     )
-    print(f"Index page: {config.ics_output_dir / 'index.html'}")
     print(f"Subscribe URL base: {config.pages_base_url.rstrip('/')}")
     return 0
 

@@ -295,7 +295,7 @@ def write_ics_feeds(
     tz_name: str,
     duration_minutes: int,
 ) -> dict[str, int]:
-    """Write per-team + all .ics files and the index.html picker page."""
+    """Write per-team + all .ics files into the Pages dir."""
     tz = ZoneInfo(tz_name)
     ics_dir = output_dir / ics_subdir.strip("/")
     ics_dir.mkdir(parents=True, exist_ok=True)
@@ -318,12 +318,5 @@ def write_ics_feeds(
             render_calendar(team_matches, tz, duration_minutes, cal_name),
             encoding="utf-8",
         )
-
-    # index.html
-    index_path = output_dir / "index.html"
-    index_path.write_text(
-        render_index(team_counts, len(matches), base_url, ics_subdir),
-        encoding="utf-8",
-    )
 
     return {"teams": len(team_counts), "matches": len(matches)}
