@@ -57,6 +57,11 @@ class Match:
     def involves_any(self, teams: tuple[str, ...]) -> bool:
         return any(self.involves_team(team) for team in teams)
 
+    @property
+    def is_scheduled(self) -> bool:
+        """False when the league has not published a date yet (e.g. datetime_raw is TBA)."""
+        return bool(self.date)
+
 
 class CalendarParser(html.parser.HTMLParser):
     def __init__(self) -> None:

@@ -126,7 +126,8 @@ def render_calendar(
     calendar_name: str,
 ) -> str:
     body: list[str] = []
-    for m in sorted(matches, key=lambda x: (x.date, x.time or "")):
+    scheduled = [m for m in matches if m.is_scheduled]
+    for m in sorted(scheduled, key=lambda x: (x.date, x.time or "")):
         body.extend(event_lines(m, tz, duration_minutes))
 
     header = [

@@ -39,6 +39,9 @@ def sync_matches(matches: list[Match], config: Config) -> dict[str, int]:
     created = 0
     skipped = 0
     for match in matches:
+        if not match.is_scheduled:
+            print(f"  skip {event_summary(match)} (date TBA)")
+            continue
         uid = event_uid(match)
         if uid in existing:
             skipped += 1
